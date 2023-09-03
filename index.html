@@ -13,11 +13,46 @@
 
 </head>
 <body>
+
     <header class="h-screen">
         <div id="myBg" class="relative w-full h-[100%] bg-cover duration-[2.5s]" style="background-image: url(./img/background/bg1.jpg)">
-            <div class="w-full h-20 bg-[rgba(50,50,50,0.3)] hover:bg-[rgba(50,50,50,0.6)] duration-300">
-                <nav>
-
+            <div class="w-full h-20 bg-[rgba(250,250,250,0.3)] hover:bg-[rgba(250,250,250,0.6)] duration-300">
+                <nav class="w-full h-20 flex justify-center items-center fixed">
+                        <div class="nav z-20">
+                            <ul class="w-full flex justify-center items-center">
+                                <li class="list home">
+                                    <a href="#">
+                                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                                        <span class="text">Home</span>
+                                    </a>
+                                </li>
+                                <li class="list">
+                                    <a href="#main">
+                                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                                        <span class="text">Profile</span>
+                                    </a>
+                                </li>
+                                <li class="list">
+                                    <a href="#">
+                                        <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
+                                        <span class="text">Message</span>
+                                    </a>
+                                </li>
+                                <li class="list">
+                                    <a href="#">
+                                        <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                                        <span class="text">Photos</span>
+                                    </a>
+                                </li>
+                                <li class="list">
+                                    <a href="#files">
+                                        <span class="icon"><ion-icon name="folder-outline"></ion-icon></span>
+                                        <span class="text">Files</span>
+                                    </a>
+                                </li>
+                                <div class="indicator"></div>
+                            </ul>
+                        </div>
                 </nav>
             </div>
             <div class="absolute w-full h-12 top-[50%] flex justify-between">
@@ -29,14 +64,26 @@
                 </button>
             </div>
             <div class="absolute z-10 w-full h-20 bottom-0 bg-[rgba(0,0,0,0.2)] flex justify-center items-center">
-                <p class="font-bold text-xl text-blue-500 hover:opacity-80"><a href="#main">了解我！</a></p>
+                <p class="arrow font-bold shadow-2xl text-6xl text-blue-500 hover:opacity-80"><a href="#main"><ion-icon name="caret-down-outline"></ion-icon></a></p>
             </div>
         </div>
     </header>
 
     <main>
+        <div class="w-full h-[10vh] bg-[#aaa]"></div>
+        <div id="main" class="w-full h-[100vh] bg-[#ddd]">
+            <div class="flex">
+                <div class="static-text font-bold">我是 </div>
+                <ul class="dynamic-text">
+                    <li><span>Youtube1</span></li>
+                    <li><span>Youtube2</span></li>
+                    <li><span>Youtube3</span></li>
+                    <li><span>Youtube4</span></li>
+                </ul>
+            </div>
+        </div>
         <!-- main things -->
-        <div id="main" class="h-[100vh] w-full flex flex-wrap">
+        <div id="files" class="h-[100vh] w-full flex flex-wrap">
             <div class="relative shadow-2xl max-w-[300px] m-auto text-center top-[10%]">
                 <img src="./img/cards/card1.jpg" alt="Seat Adjustment" class="w-full">
                 <h1 class="text-3xl">座位表</h1>
@@ -74,7 +121,8 @@
 
     </main>
     <script src="./js/index.js"></script>
-
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <footer>
         
     </footer>

@@ -50,3 +50,16 @@ function showBg(num) {
         /* Texts.textContent = "😎Tip4 - End the interview with a good impression💖" */
     }
 }
+
+const list = document.querySelectorAll('.list');
+    window.onload = function() {
+        document.querySelector('.home').classList.add('active');
+    }
+    function activeLink(){
+        list.forEach((item) =>
+        item.classList.remove('active'));
+        this.classList.add('active');
+    }
+
+    list.forEach((item) =>
+    item.addEventListener('click',activeLink));
