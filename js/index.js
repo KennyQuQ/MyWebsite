@@ -32,6 +32,27 @@ function pushBg(num) {
     Bgs.style.opacity = 1
 }
 
+// function showBg(num) {
+//     if (num === 0) {
+//         Bgs.style.backgroundImage = "url('./img/background/bg1.jpg')";
+//         /* Texts.textContent = "😀Hello, we are Group 3😀" */
+//     } else if (num === 1) {
+//         Bgs.style.backgroundImage = "url('./img/background/bg2.jpg')";
+//         /* Texts.textContent = "😊Tip1 - good dress and time⌚" */
+//     } else if (num === 2) {
+//         Bgs.style.backgroundImage = "url('./img/background/bg3.jpg')";
+//         /* Texts.textContent = "🤓Tip2 - Answer the question in detail📙" */
+//     } else if (num === 3) {
+//         Bgs.style.backgroundImage = "url('./img/background/bg4.jpg')";
+//         /* Texts.textContent = "🙃Tip3 - be polite, avoid using filler words✨" */
+//     }  else if (num === 4) {
+//         Bgs.style.backgroundImage = "url('./img/background/bg5.jpg')";
+//         /* Texts.textContent = "😎Tip4 - End the interview with a good impression💖" */
+//     }
+// }
+
+// video button
+
 function showBg(num) {
     if (num === 0) {
         Bgs.style.backgroundImage = "url('./img/background/bg1.jpg')";
