@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kenny">
+    <title>Oral Exam Interview!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+
+</head>
+<body>
+    <header class="h-screen">
+        <div id="myBg" class="relative w-full h-[100%] bg-cover duration-[1.5s]" style="background-image: url(./img/background/bg1.jpg)">
+            <div class="w-full h-20 bg-[rgba(50,50,50,0.3)] hover:bg-[rgba(50,50,50,0.6)] duration-300">
+                <nav>
+                    <div class="w-full h-full flex justify-center items-center">
+                        <p id="text-el" class="w-[px] h-20 text-8xl text-red-500 font-bold text-center duration-[1.5s]">😀Hello, we are Group 3😀</p>
+                    </div>
+                </nav>
+            </div>
+            <div class="absolute w-full h-12 top-[50%] flex justify-between">
+                <div class="bg-[rgba(0,0,0,0.2)] cursor-pointer w-[22px] -mt-[22px] p-8 text-white font-bold text-2xl hover:bg-[rgba(0,0,0,0.8)] duration-300 rounded-xl flex justify-center items-center" onclick="pushBg(-1)">
+                    <a>&#10094;</a>
+                </div>
+                <div class="z-20 bg-[rgba(0,0,0,0.2)] cursor-pointer w-[22px] -mt-[22px] p-8 text-white font-bold text-2xl hover:bg-[rgba(0,0,0,0.8)] duration-300 rounded-xl flex justify-center items-center" onclick="pushBg(1)"> 
+                    <a>&#10095;</a>
+                </div>
+            </div>
+            <div class="absolute z-10 w-full h-20 bottom-0 bg-[rgba(0,0,0,0.2)] flex justify-center items-center">
+                <p class="font-bold text-xl text-blue-500 hover:opacity-80"><a href="#main">Kenny is so handsome!</a></p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- main things -->
+        <div id="main" class="h-[100vh] w-full"></div>
+
+    </main>
+    <script src="./js/index.js"></script>
+
+    <footer>
+        
+    </footer>
+</body>
+</html>

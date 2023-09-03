@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Kenny">
+    <title>place arrangement - six class</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/placeArrangement.css" type="text/css">
+
+</head>
+<body class="h-screen">
+    <div class="z-50 fixed left-[32%] w-[40rem] h-[40rem] bg-white rounded-xl shadow-xl" id="popup">
+            <div class="w-full h-[10%]">
+                <img class="w-24 h-24 -mt-6 opacity-80 mx-auto" src="../img/setting.png" alt="setting">
+                <img class="w-24 h-24 -mt-20 opacity-80 right-0 absolute hover:opacity-60 duration-200" src="../img/cross.png" alt="cross" onclick="popupClose()">
+            </div>
+            <div class="w-full h-full flex justify-between">
+                <div class="w-[20%] h-[70%] p-12 flex flex-col justify-start gap-4">
+                    <button class="w-36 h-16 bg-red-200 rounded-md text-2xl md:text-md text-gray-800 font-bold hover:opacity-70 duration-200" onclick="inputName()">名字輸入</button>
+                    <button class="w-36 h-16 bg-blue-200 rounded-md text-2xl md:text-md text-gray-800 font-bold hover:opacity-70 duration-200">table</button>
+                </div>
+                <div class="mt-14 w-[60%] h-[80%] flex flex-col">
+                    <textarea name="inputName" id="inputName" cols="30" rows="10" class="w-[80%] h-[80%] border-4 bg-gray-100" placeholder="eg. 陳大明"></textarea>
+                    <div class="mt-4 px-4 w-[80%] h-[20%] flex justify-between">
+                        <button class="w-24 h-12 p-2 bg-red-300 rounded-xl text-lg text-bold text-white hover:opacity-70 duration-200" onclick="saveList()">儲存名單</button>
+                        <button class="w-24 h-12 p-2 bg-blue-300 rounded-xl text-lg text-bold text-white hover:opacity-70 duration-200" onclick="loadList()">加載名單</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <header class="w-full h-[20%]">
+        <div class="w-full h-full bg-blue-100 flex justify-center items-center">
+            <div class="w-[40%] mx-16">
+                <p class="text-3xl md:text-lg text-blue-700 font-bold">座位表 - 六個班</p>
+            </div>
+            <div class="w-[60%] h-full flex justify-between items-center mr-16">
+                <div class="w-[50%] h-full flex justify-start items-center">
+                    <button id="btn-el" class="ml-[10%] w-24 h-18 p-2 text-2xl text-red-400 bg-red-200 border-4 border-red-400 font-bold rounded-xl hover:opacity-80">生成!</button>
+                </div>
+                <div class="w-[50%] h-full flex justify-center items-center">
+                    <a href="../index.html"><button class="w-24 h-18 ml-4 p-4 text-xl text-blue-400 bg-blue-200 border-4 border-blue-400 font-bold rounded-xl hover:opacity-80">返回主頁!</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="w-full h-[10%] border-1">
+        <div class="flex items-center justify-end">
+            <button type="submit" onclick="popupOpen()" class="p-8 hover:opacity-60 duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+    <main class="text-center text-md">
+        <div class="mt-8 w-full h-12 bg-blue-300 text-4xl text-center">F6A</div>
+        <div class="w-full h-[80%]">
+    <ul class="w-[33%] h-auto mx-auto">
+        <li id="seat-a1" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-a2" class="change flex justify-center items-center"></li>
+        <li id="seat-a3" class="change flex justify-center items-center"></li>
+        <li id="seat-a4" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-a5" class="change flex justify-center items-center"></li>
+        <li id="seat-a6" class="change flex justify-center items-center"></li>
+        <li id="seat-a7" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-a8" class="change flex justify-center items-center"></li>
+        <li id="seat-a9" class="change flex justify-center items-center"></li>
+        <li id="seat-a10" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-a11" class="change flex justify-center items-center"></li>
+        <li id="seat-a12" class="change flex justify-center items-center"></li>
+        <li id="seat-a13" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-a14" class="change flex justify-center items-center"></li>
+        <li id="seat-a15" class="change flex justify-center items-center"></li>
+        <li id="seat-a16" class="change flex justify-center items-center"></li>
+    </ul>
+    <div class="absolute left-0 w-full h-24 bg-red-100 flex justify-between items-center">
+        <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
+            <p class="text-3xl text-red-800">門口</p>
+        </div>
+        <div class="bottom-0 w-96 h-24 bg-gray-700 flex justify-center items-center">
+            <p class="text-5xl text-white">白板</p>
+        </div>
+        <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
+            <p class="text-3xl text-red-800">教師檯</p>
+        </div>
+    </div>
+        <div class="mt-64 w-full h-12 bg-blue-300 text-4xl text-center">F6B</div>
+        <div class="w-full h-[80%]">
+    <ul class="w-full h-auto mx-auto">
+        <li id="seat-b1" class="change flex justify-center items-center"></li>
+        <li id="seat-b2" class="change flex justify-center items-center"></li>
+        <li id="seat-b3" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-b4" class="change flex justify-center items-center"></li>
+        <li id="seat-b5" class="change flex justify-center items-center"></li>
+        <li id="seat-b6" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-b7" class="change flex justify-center items-center"></li>
+        <li id="seat-b8" class="change flex justify-center items-center"></li>
+        <li id="seat-b9" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-b10" class="change flex justify-center items-center"></li>
+        <li id="seat-b11" class="change flex justify-center items-center"></li>
+        <li id="seat-b12" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-b13" class="change flex justify-center items-center"></li>
+        <li id="seat-b14" class="change flex justify-center items-center"></li>
+        <li id="seat-b15" class="change flex justify-center items-center"></li>
+    </ul>
+
+    <div class="absolute left-0 w-full h-24 bg-red-100 flex justify-between items-center">
+        <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
+            <p class="text-3xl text-red-800">門口</p>
+        </div>
+        <div class="bottom-0 w-96 h-24 bg-gray-700 flex justify-center items-center">
+            <p class="text-5xl text-white">白板</p>
+        </div>
+        <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
+            <p class="text-3xl text-red-800">教師檯</p>
+        </div>
+    </div>
+</div>
+        <div class="mt-64 w-full h-12 bg-blue-300 text-4xl text-center">F6C</div>
+        <div class="w-full h-[80%]">
+    <ul class="w-[66.7%] h-auto">
+        <li id="seat-c1" class="change flex justify-center items-center"></li>
+        <li id="seat-c2" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-c3" class="change flex justify-center items-center"></li>
+        <li id="seat-c4" class="change flex justify-center items-center"></li>
+        <li id="seat-c5" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-c6" class="change flex justify-center items-center"></li>
+        <li id="seat-c7" class="change flex justify-center items-center"></li>
+        <li id="seat-c8" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-c9" class="change flex justify-center items-center"></li>
+        <li id="seat-c10" class="change flex justify-center items-center"></li>
+        <li id="seat-c11" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-c12" class="change flex justify-center items-center"></li>
+        <li id="seat-c13" class="change flex justify-center items-center"></li>
+        <li id="seat-c14" class="change flex justify-center items-center"></li>
+    </ul>
+
+    <div class="absolute left-0 w-full h-24 bg-red-100 flex justify-between items-center">
+        <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
+            <p class="text-3xl text-red-800">門口</p>
+        </div>
+        <div class="bottom-0 w-96 h-24 bg-gray-700 flex justify-center items-center">
+            <p class="text-5xl text-white">白板</p>
+        </div>
+        <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
+            <p class="text-3xl text-red-800">教師檯</p>
+        </div>
+    </div>
+</div>
+        
+        <div class="mt-64 w-full h-12 bg-blue-300 text-4xl text-center">F6D</div>
+        <div class="w-full h-[80%]">
+    <ul class="w-[33.3%] h-auto">
+        <li id="seat-d1" class="change flex justify-center items-center"></li>
+     </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-d2" class="change flex justify-center items-center"></li>
+        <li id="seat-d3" class="change flex justify-center items-center"></li>
+        <li id="seat-d4" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-d5" class="change flex justify-center items-center"></li>
+        <li id="seat-d6" class="change flex justify-center items-center"></li>
+        <li id="seat-d7" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-d8" class="change flex justify-center items-center"></li>
+        <li id="seat-d9" class="change flex justify-center items-center"></li>
+        <li id="seat-d10" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-d11" class="change flex justify-center items-center"></li>
+        <li id="seat-d12" class="change flex justify-center items-center"></li>
+        <li id="seat-d13" class="change flex justify-center items-center"></li>
+    </ul>
+    <div class="absolute left-0 w-full h-24 bg-red-100 flex justify-between items-center">
+        <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
+            <p class="text-3xl text-red-800">門口</p>
+        </div>
+        <div class="bottom-0 w-96 h-24 bg-gray-700 flex justify-center items-center">
+            <p class="text-5xl text-white">白板</p>
+        </div>
+        <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
+            <p class="text-3xl text-red-800">教師檯</p>
+        </div>
+    </div>
+</div>
+        <div class="mt-64 w-full h-12 bg-blue-300 text-4xl text-center">F6E</div>
+        <div class="w-full h-[80%]">
+    <ul class="w-[66.7%] h-auto">
+        <li id="seat-e1" class="change flex justify-center items-center"></li>
+        <li id="seat-e2" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-e3" class="change flex justify-center items-center"></li>
+        <li id="seat-e4" class="change flex justify-center items-center"></li>
+        <li id="seat-e5" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-e6" class="change flex justify-center items-center"></li>
+        <li id="seat-e7" class="change flex justify-center items-center"></li>
+        <li id="seat-e8" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-e9" class="change flex justify-center items-center"></li>
+        <li id="seat-e10" class="change flex justify-center items-center"></li>
+        <li id="seat-e11" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-e12" class="change flex justify-center items-center"></li>
+        <li id="seat-e13" class="change flex justify-center items-center"></li>
+        <li id="seat-e14" class="change flex justify-center items-center"></li>
+    </ul>
+    <div class="absolute left-0 w-full h-24 bg-red-100 flex justify-between items-center">
+        <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
+            <p class="text-3xl text-red-800">門口</p>
+        </div>
+        <div class="bottom-0 w-96 h-24 bg-gray-700 flex justify-center items-center">
+            <p class="text-5xl text-white">白板</p>
+        </div>
+        <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
+            <p class="text-3xl text-red-800">教師檯</p>
+        </div>
+    </div>
+</div>
+        <div class="mt-64 w-full h-12 bg-blue-300 text-4xl text-center">F6F</div>
+        <div class="w-full h-[80%]">
+    <ul class="w-[33%] h-auto mx-auto">
+        <li id="seat-f1" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-f2" class="change flex justify-center items-center"></li>
+        <li id="seat-f3" class="change flex justify-center items-center"></li>
+        <li id="seat-f4" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-f5" class="change flex justify-center items-center"></li>
+        <li id="seat-f6" class="change flex justify-center items-center"></li>
+        <li id="seat-f7" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-f8" class="change flex justify-center items-center"></li>
+        <li id="seat-f9" class="change flex justify-center items-center"></li>
+        <li id="seat-f10" class="change flex justify-center items-center"></li>
+    </ul>
+    <ul class="w-full h-auto">
+        <li id="seat-f11" class="change flex justify-center items-center"></li>
+        <li id="seat-f12" class="change flex justify-center items-center"></li>
+        <li id="seat-f13" class="change flex justify-center items-center"></li>
+    </ul>
+    <div class="absolute left-0 w-full h-24 bg-red-100 flex justify-between items-center">
+        <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
+            <p class="text-3xl text-red-800">門口</p>
+        </div>
+        <div class="bottom-0 w-96 h-24 bg-gray-700 flex justify-center items-center">
+            <p class="text-5xl text-white">白板</p>
+        </div>
+        <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
+            <p class="text-3xl text-red-800">教師檯</p>
+        </div>
+    </div>
+</div>
+</main>
+    
+<script src="../js/placeArrangement(sixClass).js"></script>
+<script src="../js/popup.js"></script>
+</body>
