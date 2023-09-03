@@ -17,7 +17,7 @@
     <header class="h-screen">
         <div id="myBg" class="relative w-full h-0 bg-cover duration-[2.5s]" style="background-image: url(./img/background/bg1.jpg)">
             <div class="w-full h-20 border-b-2 bg-[rgba(255,255,255,1)] hover:bg-[rgba(255,255,255,1)] duration-300">
-                <nav class="w-full h-20 flex justify-center items-center fixed fade-down">
+                <nav class="w-full h-20 flex justify-center items-center fixed fade-down z-50">
                         <div class="nav z-50">
                             <ul class="w-full flex justify-center items-center">
                                 <li class="list home">
@@ -27,21 +27,21 @@
                                     </a>
                                 </li>
                                 <li class="list">
-                                    <a href="#main">
+                                    <a href="#experiences">
                                         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                                         <span class="text">經歷</span>
                                     </a>
                                 </li>
                                 <li class="list">
-                                    <a href="#">
+                                    <a href="#contacts">
                                         <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
                                         <span class="text">聯繫</span>
                                     </a>
                                 </li>
                                 <li class="list">
-                                    <a href="#">
+                                    <a href="#videos">
                                         <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
-                                        <span class="text">相片</span>
+                                        <span class="text">影片</span>
                                     </a>
                                 </li>
                                 <li class="list">
@@ -66,7 +66,7 @@
             </div>
         </div>
         <!-- <div class="w-full h-[10vh] bg-[#aaa]"></div> -->
-        <div class="w-full -mt-[80px] h-[100vh] bg-[#f3f8fd] px-16">
+        <div class="w-full -mt-[80px] h-[100vh] bg-gradient-to-r from-[#fff8fd] to-[#e0f8fd] px-16">
             <div></div>
             <div class="h-[100vh] w-full flex flex-wrap z-10 rounded-full">
                 <div class="relative shadow-2xl max-w-[400px] m-auto text-center top-[10%] fade-up rounded-full">
@@ -87,51 +87,243 @@
                         <div class="text-4xl text-[#FC6D6D] py-16 ">📍位於上海交通大學</div>
                 </div>
             </div>
-            <div class="absolute w-full h-20 bottom-0 bg-[rgba(255,255,255,0.3)] hover:bg-[rgba(255,255,255,0.6)] duration-300 flex justify-center items-center border-y-2 ">
-                <p class="arrow font-bold text-6xl text-blue-500 hover:opacity-80 -ml-[135px]"><a href="#files"><ion-icon name="caret-down-outline"></ion-icon></a></p>
+            <div id="experiences" class="absolute w-full h-20 left-0 bottom-0 bg-[rgba(255,255,255,0.3)] hover:bg-[rgba(255,255,255,0.6)] duration-300 flex justify-center items-center border-y-2 ">
+                <p class="arrow font-bold text-6xl text-blue-500 hover:opacity-80"><a href="#experiences"><ion-icon name="caret-down-outline"></ion-icon></a></p>
             </div>
             </div>
         </div>
     </header>
         <main>
+            <div class="h-[300vh] w-full container-experiences">
+                <div class="flex justify-center items-center text-7xl pb-16 text-[#879395]">我的經歷</div>
+                <div class="center-line">
+                    <a href="#experiences" class="scroll-icon p-1"><ion-icon name="chevron-up-outline"></ion-icon></a>
+                </div>
+                <div class="row row-left">
+                    <section class="shadow-2xl">
+                        <ion-icon class="ion-icon" name="planet-outline"></ion-icon>
+                        <div class="details">
+                            <span class="title">Title of Section 1</span>
+                            <span>1st Jan 2021</span>
+                        </div>
+                        <p class="py-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aliquam quam magnam at possimus adipisci eveniet eos tenetur. Qui, quasi?</p>
+                        <!-- <div class="bottom">
+                            <a href="#">Read more</a>
+                            <i>- Someone famous</i>
+                        </div> -->
+                    </section>
+                </div>
+                <div class="py-8"></div>
+                <div class="row row-right">
+                    <section class="shadow-2xl">
+                        <ion-icon class="ion-icon" name="planet-outline"></ion-icon>
+                        <div class="details">
+                            <span class="title">Title of Section 1</span>
+                            <span>1st Jan 2021</span>
+                        </div>
+                        <p class="py-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aliquam quam magnam at possimus adipisci eveniet eos tenetur. Qui, quasi?</p>
+                        <!-- <div class="bottom">
+                            <a href="#">Read more</a>
+                            <i>- Someone famous</i>
+                        </div> -->
+                    </section>
+                </div>
+                <div class="py-8"></div>
+                <div class="row row-left">
+                    <section class="shadow-2xl">
+                        <ion-icon class="ion-icon" name="planet-outline"></ion-icon>
+                        <div class="details">
+                            <span class="title">Title of Section 1</span>
+                            <span>1st Jan 2021</span>
+                        </div>
+                        <p class="py-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aliquam quam magnam at possimus adipisci eveniet eos tenetur. Qui, quasi?</p>
+                        <!-- <div class="bottom">
+                            <a href="#">Read more</a>
+                            <i>- Someone famous</i>
+                        </div> -->
+                    </section>
+                </div>
+                <div class="py-8"></div>
+                <div class="row row-right">
+                    <section class="shadow-2xl">
+                        <ion-icon class="ion-icon" name="planet-outline"></ion-icon>
+                        <div class="details">
+                            <span class="title">Title of Section 1</span>
+                            <span>1st Jan 2021</span>
+                        </div>
+                        <p class="py-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aliquam quam magnam at possimus adipisci eveniet eos tenetur. Qui, quasi?</p>
+                        <!-- <div class="bottom">
+                            <a href="#">Read more</a>
+                            <i>- Someone famous</i>
+                        </div> -->
+                    </section>
+                </div>
+                <div class="py-8"></div>
+                <div class="row row-left">
+                    <section class="shadow-2xl">
+                        <ion-icon class="ion-icon" name="planet-outline"></ion-icon>
+                        <div class="details">
+                            <span class="title">Title of Section 1</span>
+                            <span>1st Jan 2021</span>
+                        </div>
+                        <p class="py-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aliquam quam magnam at possimus adipisci eveniet eos tenetur. Qui, quasi?</p>
+                        <!-- <div class="bottom">
+                            <a href="#">Read more</a>
+                            <i>- Someone famous</i>
+                        </div> -->
+                    </section>
+                </div>
+                <div class="py-8"></div>
+                <div class="row row-right">
+                    <section class="shadow-2xl">
+                        <ion-icon class="ion-icon" name="planet-outline"></ion-icon>
+                        <div class="details">
+                            <span class="title">Title of Section 1</span>
+                            <span>1st Jan 2021</span>
+                        </div>
+                        <p class="py-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aliquam quam magnam at possimus adipisci eveniet eos tenetur. Qui, quasi?</p>
+                        <!-- <div class="bottom">
+                            <a href="#">Read more</a>
+                            <i>- Someone famous</i>
+                        </div> -->
+                    </section>
+                </div>
+                <div class="py-8"></div>
+                <div class="row row-left">
+                    <section class="shadow-2xl">
+                        <ion-icon class="ion-icon" name="planet-outline"></ion-icon>
+                        <div class="details">
+                            <span class="title">Title of Section 1</span>
+                            <span>1st Jan 2021</span>
+                        </div>
+                        <p class="py-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aliquam quam magnam at possimus adipisci eveniet eos tenetur. Qui, quasi?</p>
+                        <!-- <div class="bottom">
+                            <a href="#">Read more</a>
+                            <i>- Someone famous</i>
+                        </div> -->
+                    </section>
+                </div>
+                <div class="py-8"></div>
+                <div class="row row-right">
+                    <section class="shadow-2xl">
+                        <ion-icon class="ion-icon" name="planet-outline"></ion-icon>
+                        <div class="details">
+                            <span class="title">Title of Section 1</span>
+                            <span>1st Jan 2021</span>
+                        </div>
+                        <p class="py-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aliquam quam magnam at possimus adipisci eveniet eos tenetur. Qui, quasi?</p>
+                        <!-- <div class="bottom">
+                            <a href="#">Read more</a>
+                            <i>- Someone famous</i>
+                        </div> -->
+                    </section>
+                </div>
+                <div class="py-8"></div>
+                <div class="row row-left">
+                    <section class="shadow-2xl">
+                        <ion-icon class="ion-icon" name="planet-outline"></ion-icon>
+                        <div class="details">
+                            <span class="title">Title of Section 1</span>
+                            <span>1st Jan 2021</span>
+                        </div>
+                        <p class="py-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aliquam quam magnam at possimus adipisci eveniet eos tenetur. Qui, quasi?</p>
+                        <!-- <div class="bottom">
+                            <a href="#">Read more</a>
+                            <i>- Someone famous</i>
+                        </div> -->
+                    </section>
+                </div>
+                <div class="py-8"></div>
+                <div class="row row-right">
+                    <section class="shadow-2xl">
+                        <ion-icon class="ion-icon" name="planet-outline"></ion-icon>
+                        <div class="details">
+                            <span class="title">Title of Section 1</span>
+                            <span>1st Jan 2021</span>
+                        </div>
+                        <p class="py-8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, aliquam quam magnam at possimus adipisci eveniet eos tenetur. Qui, quasi?</p>
+                        <!-- <div class="bottom">
+                            <a href="#">Read more</a>
+                            <i>- Someone famous</i>
+                        </div> -->
+                    </section>
+                </div>
+            </div>
+            <div id="contacts" class=" mt-32 h-40"></div>
+            <div class="h-[50vh] w-full container-contact bg-[#e5e7eb]">
+                <div class="flex justify-center items-center text-7xl py-16 text-[#879395]">聯繫我!</div>
+                <section class="w-full h-40 flex justify-center items-center">
+                    <ul class="w-[40%] h-40 flex justify-between items-center px-auto">
+                        <li><a href="https://www.facebook.com/sou.kenny.5/" class="text-5xl text-[#139cf8]"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCRpLwlgoTh4YtZwyL6td51g" class="text-5xl text-[#fe0708]"><ion-icon name="logo-youtube"></ion-icon></a></li>
+                        <li><a href="https://www.instagram.com/soukinowo/" class="text-5xl text-[#f411c2]"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                        <li><a href="https://github.com/KennyQuQ" class="text-5xl text-[#adbac7]"><ion-icon name="logo-github"></ion-icon></a></li>
+                        <li><a href="#" class="text-5xl text-[#fbbc04]"><ion-icon name="mail-outline"></ion-icon></a></li>
+                    </ul>
+                </section>
+            </div>
         <!-- main things -->
-        <div class="h-[100vh] w-full flex flex-wrap">
-            <div id="files" class="relative shadow-2xl max-w-[300px] m-auto text-center top-[10%]">
-                <img src="./img/cards/card1.jpg" alt="Seat Adjustment" class="w-full">
-                <h1 class="text-3xl">座位表</h1>
-                <p class="title">座位表生成器 OWO</p>
-                <p>Super COOL! - used 2 hours to make</p>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <p><a href="./html/placeArrangement.html"><button class="mt-4 border-0 inline-block p-[8px] text-white bg-black text-center cursor-pointer w-full text-2xl hover:opacity-80">按我!</button></a></p>
-            </div>
-            <div class="relative shadow-2xl max-w-[300px] m-auto text-center top-[10%]">
-                <img src="./img/cards/card1 - sixClass.jpg" alt="Seat Adjustment" class="w-full">
-                <h1 class="text-3xl">座位表 - 六個班</h1>
-                <p class="title">座位表生成器 - 六個班</p>
-                <p>Super COOL! - used so many hours to make</p>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <p><a href="./html/placeArrangement(sixClass).html"><button class="mt-4 border-0 inline-block p-[8px] text-white bg-black text-center cursor-pointer w-full text-2xl hover:opacity-80">按我!</button></a></p>
-            </div>
-            <div class="relative shadow-2xl max-w-[300px] m-auto text-center top-[10%]">
-                <img class="p-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png" alt="Seat Adjustment" class="w-full">
-                <h1 class="text-3xl">Mcdonald</h1>
-                <p class="title">Mcdonald OWO</p>
-                <p>Super COOL! - used 6 hours to make</p>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <p><a href="./foodOrder/index.html"><button class="mt-4 border-0 inline-block p-[8px] text-white bg-black text-center cursor-pointer w-full text-2xl hover:opacity-80">按我!</button></a></p>
+        <div class="w-full h-[20vh] my-16">
+            <div class="w-[30%] h-[50%] bg-[#c2d2d6]">
+                <div class="relative left-[15%] top-[25%] w-full h-full bg-[#e4f7fc] text-5xl flex justify-center items-center text-[#879395] font-bold">我的影片</div>
             </div>
         </div>
-
+        <section class="w-full h-[65vh]">
+            <div class="relative w-full h-20 top-[30%] flex justify-between">
+                <button id="btn-l" class="cursor-pointer bg-[rgba(200,200,200,1)] w-[22px] -mt-[22px] p-8 text-white font-bold text-2xl duration-300 rounded-xl flex justify-center items-center">
+                    <a>&#10094;</a>
+                </button>
+                <div class="video-preview w-[25%] -mt-[9rem] -ml-[5rem] h-[500%] bg-black rounded-full"></div>
+                <div class="video-dis w-[40%] -mt-[12rem] -mr-[5rem] h-[650%] bg-black rounded-xl"></div>
+                <button id="btn-r" class="z-20 cursor-pointer bg-[rgba(200,200,200,1)] w-[22px] -mt-[22px] p-8 text-white font-bold text-2xl duration-300 rounded-xl flex justify-center items-center"> 
+                    <a>&#10095;</a>
+                </button>
+            </div>
+        </section>
+        <div class="w-full h-[20vh] my-16">
+            <div class="w-[30%] h-[50%] bg-[#c2d2d6]">
+                <div class="relative left-[15%] top-[25%] w-full h-full bg-[#e4f7fc] text-5xl flex justify-center items-center text-[#879395] font-bold">我的小程序</div>
+            </div>
+        </div>
+        <div class="w-full h-[100vh] -mt-8 flex justify-center items-center">
+            <div class="h-[100vh] w-[80%] flex justify-center flex-wrap rounded-3xl bg-[#f3f7fc]">
+                <div id="files" class="relative shadow-2xl max-w-[300px] m-auto text-center top-[10%]">
+                    <img src="./img/cards/card1.jpg" alt="Seat Adjustment" class="w-full">
+                    <h1 class="text-3xl">座位表</h1>
+                    <p class="title">座位表生成器 OWO</p>
+                    <p>Super COOL! - used 2 hours to make</p>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <p><a href="./html/placeArrangement.html"><button class="mt-4 border-0 inline-block p-[8px] text-white bg-black text-center cursor-pointer w-full text-2xl hover:opacity-80">按我!</button></a></p>
+                </div>
+                <div class="relative shadow-2xl max-w-[300px] m-auto text-center top-[10%]">
+                    <img src="./img/cards/card1 - sixClass.jpg" alt="Seat Adjustment" class="w-full">
+                    <h1 class="text-3xl">座位表 - 六個班</h1>
+                    <p class="title">座位表生成器 - 六個班</p>
+                    <p>Super COOL! - used so many hours to make</p>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <p><a href="./html/placeArrangement(sixClass).html"><button class="mt-4 border-0 inline-block p-[8px] text-white bg-black text-center cursor-pointer w-full text-2xl hover:opacity-80">按我!</button></a></p>
+                </div>
+                <div class="relative shadow-2xl max-w-[300px] m-auto text-center top-[10%]">
+                    <img class="p-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png" alt="Seat Adjustment" class="w-full">
+                    <h1 class="text-3xl">Mcdonald</h1>
+                    <p class="title">Mcdonald OWO</p>
+                    <p>Super COOL! - used 6 hours to make</p>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <p><a href="./foodOrder/index.html"><button class="mt-4 border-0 inline-block p-[8px] text-white bg-black text-center cursor-pointer w-full text-2xl hover:opacity-80">按我!</button></a></p>
+                </div>
+            </div>
+        </div>
     </main>
+    <footer class="w-full h-[30vh] bg-[#151922] mt-64"></footer>
     <script src="./js/index.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

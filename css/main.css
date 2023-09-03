@@ -11,6 +11,7 @@
     align-items: flex-start;
     min-height: 100vh;
     background: #222327;
+    z-index: 10;
 }
 .nav{
     position: relative;
@@ -21,14 +22,14 @@
     align-items: center;
     border-radius: 10px;
     background: rgba(255,255,255,0.9);
-    z-index: 50;
+    z-index: 10;
 }
 .nav ul li{
     position: relative;
     list-style: none;
     width: 70px;
     height: 70px;
-    z-index: 1;
+    z-index: 10;
     opacity: 1;
 }
 .nav ul li a{
@@ -40,6 +41,7 @@
     width: 100%;
     text-align: center;
     font-weight: 500;
+    z-index: 10;
 }
 .nav ul li a .icon{
     position: relative;
@@ -49,6 +51,7 @@
     text-align: center;
     transition: 0.5s;
     color: #222327;
+    z-index: 10;
 }
 .nav ul li.active a .icon{
     transform: translateY(35px);
@@ -62,6 +65,7 @@
     transition: 0.5s;
     opacity: 0;
     transform: translateY(-20px);
+    z-index: 10;
 }
 .nav ul li.active a .text{
     opacity: 1;
@@ -167,7 +171,7 @@ html {
     content: "";
     left: 0;
     position: absolute;
-    background: #f3f8fd;
+    background: #e8f8fd;
     height: 120%;
     width: 100%;
     border-left: 2px solid #0aa2ad;
@@ -185,6 +189,178 @@ html {
 .fade-right{
     animation: fade-right 2.5s;
 }
+
+/* experience */
+
+.container-experiences{
+    background: #fff;
+    max-width: 80%;
+    margin: 100px auto;
+    padding: 0 20px
+}
+
+.row{
+    display: flex;
+}
+.row-left{
+    justify-content: flex-start;
+}
+.row-right{
+    justify-content: flex-end;
+}
+.center-line{
+    position: absolute;
+    height: 300vh;
+    width: 4px;
+    background: #d9ebf0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.container-experiences .row section{
+    background: #e6f8fd;
+    border-radius: 5px;
+    width: calc(50% - 60px);
+    padding: 20px;
+    position: relative;
+}
+.container-experiences .row section::before{
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: #e6f8fd;
+    top: 28px;
+    transform: rotate(45deg);
+}
+.row-left section::before{
+    right: -7px;
+}
+.row-right section::before{
+    left: -7px;
+}
+
+.details, .bottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.details .title{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.container-experiences .ion-icon, .scroll-icon{
+    position: absolute;
+    padding: 8px;
+    background-color: #d9ebf0;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #b5c5c9;
+    font-size: 17px;
+    box-shadow: 0 0 0 4px #d9ebf0, inset 0 2px 0 rgba(0,0,0,0.08), 0 3px 0 4px rgba(0,0,0,0.05);
+}
+
+.center-line .scroll-icon{
+    bottom: 0px;
+    left: 50%;
+    transform:  translateX(-50%);
+}
+
+.row-left section .ion-icon{
+    top: 13px;
+    right: -88px;
+}
+.row-right section .ion-icon{
+    top: 13px;
+    left: -88px;
+}
+
+/* contact */
+/* .container-contact section{
+    position: absolute;
+    width: 100%;
+    height: 100wh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: linear-gradient(to bottom, #ff4f8b, #dff1ff);
+}
+
+section .contact{
+    position: absolute;
+    filter: blur(150px)
+}
+section .contact:nth-child(1){
+    background: #ff359b;
+    width: 600px;
+    height: 600px;
+    top: -350px;
+}
+section .contact:nth-child(2){
+    background: #ff359b;
+    width: 500px;
+    height: 500px;
+    bottom: -150px;
+    left: 100px;
+}
+section .contact:nth-child(3){
+    background: #ff359b;
+    width: 600px;
+    height: 600px;
+    bottom: 50px;
+    right: 0px  ;
+} */
+
+.container-contact ul{
+    position: relative;
+    display: flex;
+    z-index: 2;
+}
+.container-contact ul li{
+    position: relative;
+    list-style: none;
+    margin: 10px;
+}
+.container-contact ul li a{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.4);
+    border-right: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 5px 45px rgba(0,0,0,0.1);
+    backdrop-filter: blur(2px);
+    transition: 0.5s;
+    overflow: hidden;
+}
+.container-contact ul li a:hover{
+    transform: translateY(-20px);
+}
+.container-contact ul li a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+    transform: skewX(45deg) translateX(150px);
+    transition: 0.5s;
+}
+.container-contact ul li a:hover::before{
+    transform: skewX(45deg) translateX(-150px);
+}
+
+/* animation */
 
 @keyframes typing {
     100%{
