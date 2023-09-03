@@ -20,7 +20,8 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background: rgba(250,250,250,0.7);
+    background: rgba(255,255,255,0.7);
+    z-index: 50;
 }
 .nav ul li{
     position: relative;
@@ -73,7 +74,7 @@
     height: 70px;
     background: #29fd53;
     border-radius: 50%;
-    border: 6px solid rgba(250,250,250,0.3);
+    border: 6px solid rgba(255,255,255,0.3);
     transition: 0.5s;
 }
 .indicator::before{
@@ -129,7 +130,7 @@ html {
 }
 
 .arrow {
-    animation: downward 1.5s infinite;
+    animation: downward 1s infinite;
 }
 
 @keyframes downward {
@@ -138,9 +139,9 @@ html {
 }
 
 .static-text{
-    color: #fff;
+    color: #777;
     font-size: 60px;
-    font-weight: 400;
+    font-weight: 1000;
 }
 .dynamic-text{
     margin-left: 15px;
@@ -149,7 +150,7 @@ html {
     overflow: hidden;
 }
 .dynamic-text li{
-    color: #FC6D6D;
+    color: #0aa2ad;
     list-style: none;
     font-size: 60px;
     font-weight: 500;
@@ -166,16 +167,28 @@ html {
     content: "";
     left: 0;
     position: absolute;
-    background: #ddd;
+    background: #f3f8fd;
     height: 100%;
     width: 100%;
-    border-left: 2px solid #FC6D6D;
-    animation: typing 1.5s steps(4) infinite;
+    border-left: 2px solid #0aa2ad;
+    animation: typing 1.5s steps(6) infinite;
+}
+
+.fade-up{
+    animation: fade-up 2.5s;
+}
+
+.fade-down{
+    animation: fade-down 2.5s;
+}
+
+.fade-right{
+    animation: fade-right 2.5s;
 }
 
 @keyframes typing {
     100%{
-        left: 100%;
+        left: 120%;
         margin: 0 -35px 0 35px;
     }    
 }
@@ -185,6 +198,39 @@ html {
         top: -360px;
     }
     
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-right {
+    0% {
+        opacity: 0;
+        transform: translateX(30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0px) scale(1);
+    }
 }
 
 

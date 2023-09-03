@@ -15,9 +15,9 @@
 <body>
 
     <header class="h-screen">
-        <div id="myBg" class="relative w-full h-[100%] bg-cover duration-[2.5s]" style="background-image: url(./img/background/bg1.jpg)">
-            <div class="w-full h-20 bg-[rgba(250,250,250,0.3)] hover:bg-[rgba(250,250,250,0.6)] duration-300">
-                <nav class="w-full h-20 flex justify-center items-center fixed">
+        <div id="myBg" class="relative w-full h-0 bg-cover duration-[2.5s]" style="background-image: url(./img/background/bg1.jpg)">
+            <div class="w-full h-20 border-b-2 bg-[rgba(255,255,255,0.3)] hover:bg-[rgba(255,255,255,0.6)] duration-300">
+                <nav class="w-full h-20 flex justify-center items-center fixed fade-down">
                         <div class="nav z-20">
                             <ul class="w-full flex justify-center items-center">
                                 <li class="list home">
@@ -53,38 +53,50 @@
                                 <div class="indicator"></div>
                             </ul>
                         </div>
-                </nav>
-            </div>
-            <div class="absolute w-full h-12 top-[50%] flex justify-between">
-                <button id="btn-l" class="bg-[rgba(0,0,0,0.2)] cursor-pointer w-[22px] -mt-[22px] p-8 text-white font-bold text-2xl hover:bg-[rgba(0,0,0,0.8)] duration-300 rounded-xl flex justify-center items-center">
+                </nav> 
+            <div class="absolute w-full h-0 top-[50%] flex justify-between">
+                <button id="btn-l" class="bg-[rgba(0,0,0,0.2)] cursor-pointer w-[0px] -mt-[22px] p-8 text-white font-bold text-2xl hover:bg-[rgba(0,0,0,0.8)] duration-300 rounded-xl flex justify-center items-center">
                     <a>&#10094;</a>
                 </button>
-                <button id="btn-r" class="z-20 bg-[rgba(0,0,0,0.2)] cursor-pointer w-[22px] -mt-[22px] p-8 text-white font-bold text-2xl hover:bg-[rgba(0,0,0,0.8)] duration-300 rounded-xl flex justify-center items-center"> 
+                <button id="btn-r" class="z-20 bg-[rgba(0,0,0,0.2)] cursor-pointer w-[0px] -mt-[22px] p-8 text-white font-bold text-2xl hover:bg-[rgba(0,0,0,0.8)] duration-300 rounded-xl flex justify-center items-center"> 
                     <a>&#10095;</a>
                 </button>
             </div>
-            <div class="absolute z-10 w-full h-20 bottom-0 bg-[rgba(0,0,0,0.2)] flex justify-center items-center">
-                <p class="arrow font-bold shadow-2xl text-6xl text-blue-500 hover:opacity-80"><a href="#main"><ion-icon name="caret-down-outline"></ion-icon></a></p>
+            
+            </div>
+        </div>
+        <!-- <div class="w-full h-[10vh] bg-[#aaa]"></div> -->
+        <div class="w-full -mt-[80px] h-[100vh] bg-[#f3f8fd]">
+            <div></div>
+            <div class="h-[100vh] w-full flex flex-wrap z-10 rounded-full">
+                <div class="relative shadow-2xl max-w-[400px] m-auto text-center top-[10%] fade-up rounded-full">
+                    <img src="./img/cards/card1.jpg" alt="Seat Adjustment" class="w-full rounded-full">
+                </div>
+            <div class="relative shadow-2xl w-[1000px] h-[500px] max-w-[800px] m-auto text-center top-[10%] fade-right rounded-3xl p-8">
+                <div class="flex items-start justify-between flex-col p-8 font-bold">
+                    <div class="text-8xl text-black p-8 ">你好! 👋</div>
+                        <div class="flex flex-row pl-8">
+                            <div class="static-text font-bold">我是 </div>
+                            <ul class="dynamic-text">
+                                <li><span>Youtube1</span></li>
+                                <li><span>Youtube2</span></li>
+                                <li><span>Youtube3</span></li>
+                                <li><span>Youtube4</span></li>
+                            </ul>
+                        </div>
+                        <div class="text-4xl text-[#FC6D6D] p-8 ">📍位於上海交通大學</div>
+                </div>
+            </div>
+            <div class="absolute w-full h-20 bottom-0 bg-[rgba(255,255,255,0.3)] hover:bg-[rgba(255,255,255,0.6)] duration-300 flex justify-center items-center border-y-2 ">
+                <p class="arrow font-bold text-6xl text-blue-500 hover:opacity-80"><a href="#files"><ion-icon name="caret-down-outline"></ion-icon></a></p>
+            </div>
             </div>
         </div>
     </header>
-
-    <main>
-        <div class="w-full h-[10vh] bg-[#aaa]"></div>
-        <div id="main" class="w-full h-[100vh] bg-[#ddd]">
-            <div class="flex">
-                <div class="static-text font-bold">我是 </div>
-                <ul class="dynamic-text">
-                    <li><span>Youtube1</span></li>
-                    <li><span>Youtube2</span></li>
-                    <li><span>Youtube3</span></li>
-                    <li><span>Youtube4</span></li>
-                </ul>
-            </div>
-        </div>
+        <main>
         <!-- main things -->
-        <div id="files" class="h-[100vh] w-full flex flex-wrap">
-            <div class="relative shadow-2xl max-w-[300px] m-auto text-center top-[10%]">
+        <div class="h-[100vh] w-full flex flex-wrap">
+            <div id="files" class="relative shadow-2xl max-w-[300px] m-auto text-center top-[10%]">
                 <img src="./img/cards/card1.jpg" alt="Seat Adjustment" class="w-full">
                 <h1 class="text-3xl">座位表</h1>
                 <p class="title">座位表生成器 OWO</p>
