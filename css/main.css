@@ -182,6 +182,17 @@ html {
     animation: fade-up 2.5s;
 }
 
+.reveal{
+    transform: translateY(75px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.displayed{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
 .fade-down{
     animation: fade-down 2.5s;
 }
