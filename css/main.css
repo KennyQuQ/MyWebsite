@@ -175,7 +175,7 @@ html {
     height: 120%;
     width: 100%;
     border-left: 2px solid #0aa2ad;
-    animation: typing 2s steps(10) infinite;
+    animation: typing 2s steps(12) infinite;
 }
 
 .fade-up{
@@ -280,6 +280,15 @@ html {
 }
 
 /* contact */
+
+/* button */
+
+.button-video:hover{
+    opacity: 0.9;
+    transform: scale(1.1);
+    animation-duration: 1s;
+}
+
 /* .container-contact section{
     position: absolute;
     width: 100%;
@@ -364,7 +373,7 @@ section .contact:nth-child(3){
 
 @keyframes typing {
     100%{
-        left: 120%;
+        left: 110%;
         margin: 0 -35px 0 35px;
     }    
 }

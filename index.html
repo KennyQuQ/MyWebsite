@@ -6,10 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Kenny">
     <title>Kenny's website</title>
+    <link rel="icon" type="image/x-icon" href="./img/cards/card1.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./css/main.css" type="text/css">
     <!-- Add icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preload" as="image" href='./img/background/video1.png' />
+    <link rel="preload" as="image" href='./img/background/video2.png' />
+    <link rel="preload" as="image" href='./img/background/video3.png' />
+    <link rel="preload" as="image" href='./img/background/video4.png' />
+    <link rel="preload" as="image" href='./img/background/video5.png' />
 
 </head>
 <body>
@@ -97,7 +103,7 @@
             <div class="h-[300vh] w-full container-experiences">
                 <div class="flex justify-center items-center text-7xl pb-16 text-[#879395]">我的經歷</div>
                 <div class="center-line">
-                    <a href="#experiences" class="scroll-icon p-1"><ion-icon name="chevron-up-outline"></ion-icon></a>
+                    <a href="#experiences" class="scroll-icon p-1 hover:opacity-80 duration-300"><ion-icon name="chevron-up-outline"></ion-icon></a>
                 </div>
                 <div class="row row-left">
                     <section class="shadow-2xl">
@@ -254,11 +260,11 @@
                 <div class="flex justify-center items-center text-7xl py-16 text-[#879395]">聯繫我!</div>
                 <section class="w-full h-40 flex justify-center items-center">
                     <ul class="w-[40%] h-40 flex justify-between items-center px-auto">
-                        <li><a href="https://www.facebook.com/sou.kenny.5/" class="text-5xl text-[#139cf8]"><ion-icon name="logo-facebook"></ion-icon></a></li>
-                        <li><a href="https://www.youtube.com/channel/UCRpLwlgoTh4YtZwyL6td51g" class="text-5xl text-[#fe0708]"><ion-icon name="logo-youtube"></ion-icon></a></li>
-                        <li><a href="https://www.instagram.com/soukinowo/" class="text-5xl text-[#f411c2]"><ion-icon name="logo-instagram"></ion-icon></a></li>
-                        <li><a href="https://github.com/KennyQuQ" class="text-5xl text-[#adbac7]"><ion-icon name="logo-github"></ion-icon></a></li>
-                        <li><a href="#" class="text-5xl text-[#fbbc04]"><ion-icon name="mail-outline"></ion-icon></a></li>
+                        <li><a target=”_blank” href="https://www.facebook.com/sou.kenny.5/" class="text-5xl text-[#139cf8]"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                        <li><a target=”_blank” href="https://www.youtube.com/channel/UCRpLwlgoTh4YtZwyL6td51g" class="text-5xl text-[#fe0708]"><ion-icon name="logo-youtube"></ion-icon></a></li>
+                        <li><a target=”_blank” href="https://www.instagram.com/soukinowo/" class="text-5xl text-[#f411c2]"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                        <li><a target=”_blank” href="https://github.com/KennyQuQ" class="text-5xl text-[#adbac7]"><ion-icon name="logo-github"></ion-icon></a></li>
+                        <li><a target=”_blank” href="mailto:spkennypro@gmail.com" class="text-5xl text-[#fbbc04]"><ion-icon name="mail-outline"></ion-icon></a></li>
                     </ul>
                 </section>
             </div>
@@ -271,12 +277,16 @@
         </div>
         <section class="w-full h-[65vh]">
             <div class="relative w-full h-20 top-[30%] flex justify-between">
-                <button id="btn-l" class="cursor-pointer bg-[rgba(200,200,200,1)] w-[22px] -mt-[22px] p-8 text-white font-bold text-2xl duration-300 rounded-xl flex justify-center items-center">
+                <button id="btn-ll" class="button-video cursor-pointer bg-[rgba(200,200,200,1)] w-[22px] -mt-[22px] p-8 text-white font-bold text-2xl duration-300 rounded-xl flex justify-center items-center">
                     <a>&#10094;</a>
                 </button>
-                <div class="video-preview w-[25%] -mt-[9rem] -ml-[5rem] h-[500%] bg-[#f3f7fc] shadow-2xl rounded-full"></div>
-                <div class="video-dis w-[40%] -mt-[12rem] -mr-[5rem] h-[650%] bg-[#f3f7fc] shadow-2xl rounded-xl p-8 text-3xl text-[#879395]">asd</div>
-                <button id="btn-r" class="z-20 cursor-pointer bg-[rgba(200,200,200,1)] w-[22px] -mt-[22px] p-8 text-white font-bold text-2xl duration-300 rounded-xl flex justify-center items-center"> 
+                    <div id="myVideo" class="w-[25%] -mt-[9rem] -ml-[5rem] h-[500%] bg-[#f3f7fc] shadow-2xl rounded-full duration-300" style="background-position: center; background-size: cover; background-image: url(./img/background/bg1.jpg)"></div>
+                    <div class="w-[40%] -mt-[12rem] -mr-[5rem] h-[650%] bg-[#f3f7fc] shadow-2xl rounded-xl p-8 text-3xl text-[#879395]">
+                        <div id="myTitle" class="w-full h-[10%] text-5xl text-[#0aa2ad] font-bold">Lorem</div>
+                        <div id="myDescription" class="w-full h-[70%] text-3xl text-[#879395] p-8"></div>
+                        <a target=”_blank” id="myVideolink" href=""><button class="w-[40%] h-[20%] bg-[#ec6255] mx-8 rounded-full shadow-2xl text-4xl text-white font-bold duration-300 hover:scale-110 hover:opacity-80">觀看影片</button></a>
+                    </div>
+                <button id="btn-rr" class="button-video z-20 cursor-pointer bg-[rgba(200,200,200,1)] w-[22px] -mt-[22px] p-8 text-white font-bold text-2xl duration-300 rounded-xl flex justify-center items-center"> 
                     <a>&#10095;</a>
                 </button>
             </div>
@@ -287,49 +297,36 @@
                 <div class="relative left-[15%] top-[25%] w-full h-full bg-[#e4f7fc] text-5xl flex justify-center items-center text-[#879395] font-bold">我的小程序</div>
             </div>
         </div>
-        <div class="w-full h-[100vh] -mt-8 flex justify-center items-center">
-            <div class="h-[100vh] w-[80%] flex justify-center flex-wrap rounded-3xl bg-[#f3f7fc]">
+        <div class="w-full min-h-[120vh] h-[90vh] -mt-8 flex justify-center items-start">
+            <div class="h-[80vh] w-[80%] flex justify-center flex-wrap rounded-3xl bg-[#f3f7fc] items-start">
                 <div class="relative shadow-2xl max-w-[300px] m-auto text-center top-[10%]">
                     <img src="./img/cards/card1.jpg" alt="Seat Adjustment" class="w-full">
                     <h1 class="text-3xl">座位表</h1>
                     <p class="title">座位表生成器 OWO</p>
-                    <p>Super COOL! - used 2 hours to make</p>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <p>2 hours to make</p>
                     <p><a href="./html/placeArrangement.html"><button class="mt-4 border-0 inline-block p-[8px] text-white bg-black text-center cursor-pointer w-full text-2xl hover:opacity-80">按我!</button></a></p>
                 </div>
                 <div class="relative shadow-2xl max-w-[300px] m-auto text-center top-[10%]">
                     <img src="./img/cards/card1 - sixClass.jpg" alt="Seat Adjustment" class="w-full">
                     <h1 class="text-3xl">座位表 - 六個班</h1>
                     <p class="title">座位表生成器 - 六個班</p>
-                    <p>Super COOL! - used so many hours to make</p>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <p>so many hours to make</p>
                     <p><a href="./html/placeArrangement(sixClass).html"><button class="mt-4 border-0 inline-block p-[8px] text-white bg-black text-center cursor-pointer w-full text-2xl hover:opacity-80">按我!</button></a></p>
                 </div>
                 <div class="relative shadow-2xl max-w-[300px] m-auto text-center top-[10%]">
                     <img class="p-8" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png" alt="Seat Adjustment" class="w-full">
                     <h1 class="text-3xl">Mcdonald</h1>
                     <p class="title">Mcdonald OWO</p>
-                    <p>Super COOL! - used 6 hours to make</p>
-                    <a href="#"><i class="fa fa-dribbble"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <p>6 hours to make</p>
                     <p><a href="./foodOrder/index.html"><button class="mt-4 border-0 inline-block p-[8px] text-white bg-black text-center cursor-pointer w-full text-2xl hover:opacity-80">按我!</button></a></p>
                 </div>
             </div>
         </div>
     </main>
-    <footer class="w-full h-[30vh] bg-[#151922] mt-64"></footer>
+    <footer class="min-w-[200px] w-full h-[10vh] bg-[#151922] mt-64">
+        <div class="h-[10vh] flex justify-center items-center text-xl text-white font-bold">&copy;2023 Copyright | website designed by &nbsp; <a href="#" class="text-gray-500">Kenny Sou</a></div>
+    </footer>
     <script src="./js/index.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <footer>
-        
-    </footer>
 </body>
