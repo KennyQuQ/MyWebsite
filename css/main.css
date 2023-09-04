@@ -144,19 +144,19 @@ html {
 
 .static-text{
     color: #777;
-    font-size: 60px;
+    font-size: 4vw;
     font-weight: 1000;
 }
 .dynamic-text{
-    margin-left: 15px;
-    height: 90px;
-    line-height: 90px;
+    margin-left: 1vw;
+    height: 6vw;
+    line-height: 6vw;
     overflow: hidden;
 }
 .dynamic-text li{
     color: #0aa2ad;
     list-style: none;
-    font-size: 60px;
+    font-size: 4vw;
     font-weight: 500;
     position: relative;
     top: 0;
@@ -232,7 +232,7 @@ html {
     background: #e6f8fd;
     border-radius: 5px;
     width: calc(50% - 60px);
-    padding: 20px;
+    padding: 1vw;
     position: relative;
 }
 .container-experiences .row section::before{
@@ -257,7 +257,7 @@ html {
 }
 
 .details .title{
-    font-size: 22px;
+    font-size: 1.5vw;
     font-weight: 600;
 }
 
@@ -288,6 +288,35 @@ html {
 .row-right section .ion-icon{
     top: 13px;
     left: -88px;
+}
+
+@media(max-width: 772px){
+    .container-experiences .center-line{
+        display: none;
+    }
+    .container-experiences .row{
+        margin: 30px 0 3px 60px;
+    }
+    .container-experiences .row section{
+        width: 100%;
+    }
+    .row-left section::before{
+        left: -7px;
+    }
+    .row section .ion-icon{
+        left: -16vw;
+    }
+}
+
+@media(max-width: 440px){
+    .container-experiences .center-line,
+    .row section::before,
+    .row section .ion-icon{
+        display: none;
+    }
+    .container-experiences .row{
+        margin: 10px 0;
+    }
 }
 
 /* contact */
@@ -343,12 +372,12 @@ section .contact:nth-child(3){
 .container-contact ul li{
     position: relative;
     list-style: none;
-    margin: 10px;
+    margin: 0.67vw;
 }
 .container-contact ul li a{
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 5vw;
+    height: 5vw;
     display: inline-block;
     border-radius: 10px;
     display: flex;
@@ -364,7 +393,7 @@ section .contact:nth-child(3){
     overflow: hidden;
 }
 .container-contact ul li a:hover{
-    transform: translateY(-20px);
+    transform: translateY(-2vw);
 }
 .container-contact ul li a::before{
     content: '';
@@ -391,7 +420,7 @@ section .contact:nth-child(3){
 
 @keyframes slide {
     100%{
-        top: -360px;
+        top: -24vw;
     }
     
 }
