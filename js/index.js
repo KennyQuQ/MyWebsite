@@ -119,7 +119,7 @@ window.addEventListener("scroll", function () {
         list.forEach((item) =>
         item.classList.remove('active'));
         list[1].classList.add('active');
-    } else if(scrollPercentage.toFixed(2) <= 64){
+    } else if(scrollPercentage.toFixed(2) <= 66){
         list.forEach((item) =>
         item.classList.remove('active'));
         list[2].classList.add('active');

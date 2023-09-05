@@ -290,7 +290,7 @@ html {
     left: -88px;
 }
 
-@media(max-width: 772px){
+@media(max-width: 768px){
     .container-experiences .center-line{
         display: none;
     }
@@ -308,7 +308,7 @@ html {
     }
 }
 
-@media(max-width: 440px){
+/* @media(max-width: 440px){
     .container-experiences .center-line,
     .row section::before,
     .row section .ion-icon{
@@ -317,7 +317,7 @@ html {
     .container-experiences .row{
         margin: 10px 0;
     }
-}
+} */
 
 /* contact */
 
@@ -374,6 +374,7 @@ section .contact:nth-child(3){
     list-style: none;
     margin: 0.67vw;
 }
+
 .container-contact ul li a{
     position: relative;
     width: 5vw;
@@ -407,6 +408,19 @@ section .contact:nth-child(3){
 }
 .container-contact ul li a:hover::before{
     transform: skewX(45deg) translateX(-150px);
+}
+
+@media not all and (min-width: 768px) {
+    .container-contact ul{
+        margin-left: -32vw;
+    }
+    .container-contact ul li a{
+        width: 10vw;
+        height: 10vw;
+    }
+    .container-contact ul li{
+        margin: 2vw;
+    }
 }
 
 /* animation */
@@ -520,3 +534,27 @@ html {
     font-size: 18px;
 >>>>>>> 1e44b404ee8072e024af3f8ed4c2215bcd3aca3e
 } */
+
+/* mobile */
+
+@media not all and (min-width: 768px) {
+    
+    .static-text{
+        font-size: 6vw;
+    }
+    .dynamic-text{
+        height: 7vw;
+        line-height: 7vw;
+    }
+    .dynamic-text li{
+        font-size: 6vw;
+    }
+
+@keyframes slide {
+    100%{
+        top: -28vw;
+    }
+    
+}
+
+    }
