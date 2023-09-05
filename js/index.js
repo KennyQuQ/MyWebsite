@@ -115,15 +115,15 @@ window.addEventListener("scroll", function () {
         list.forEach((item) =>
         item.classList.remove('active'));
         list[0].classList.add('active');
-    } else if(scrollPercentage.toFixed(2) <= 57){
+    } else if(scrollPercentage.toFixed(2) <= 53){
         list.forEach((item) =>
         item.classList.remove('active'));
         list[1].classList.add('active');
-    } else if(scrollPercentage.toFixed(2) <= 66){
+    } else if(scrollPercentage.toFixed(2) <= 64.32){
         list.forEach((item) =>
         item.classList.remove('active'));
         list[2].classList.add('active');
-    } else if(scrollPercentage.toFixed(2) <= 79){
+    } else if(scrollPercentage.toFixed(2) <= 77){
         list.forEach((item) =>
         item.classList.remove('active'));
         list[3].classList.add('active');
