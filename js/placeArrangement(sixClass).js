@@ -32,6 +32,12 @@ function fullGenerate() {
     generateF()
 
 }
+
+// more coming soon alert
+function CSalert() {
+    alert("More Coming Soon! :)");
+}
+
 // generate students array
 function generateSetup() {
     // create a student desk array

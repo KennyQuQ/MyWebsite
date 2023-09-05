@@ -11,40 +11,39 @@
 
 </head>
 <body class="h-screen">
-    <div class="z-50 fixed left-[32%] w-[40rem] h-[40rem] bg-white rounded-xl shadow-xl" id="popup">
-            <div class="w-full h-[10%]">
-                <img class="w-24 h-24 -mt-6 opacity-80 mx-auto" src="../img/setting.png" alt="setting">
-                <img class="w-24 h-24 -mt-20 opacity-80 right-0 absolute hover:opacity-60 duration-200" src="../img/cross.png" alt="cross" onclick="popupClose()">
-            </div>
-            <div class="w-full h-full flex justify-between">
-                <div class="w-[20%] h-[70%] p-12 flex flex-col justify-start gap-4">
-                    <button class="w-36 h-16 bg-red-200 rounded-md text-2xl md:text-md text-gray-800 font-bold hover:opacity-70 duration-200" onclick="inputName()">名字輸入</button>
-                    <button class="w-36 h-16 bg-blue-200 rounded-md text-2xl md:text-md text-gray-800 font-bold hover:opacity-70 duration-200">table</button>
+    <div class="w-full flex justify-center">
+        <div class="z-50 fixed md:max-lg:-mt-16 lg:-mt-24 max-lg:w-[60vw] lg:w-[45vw] max-sm:h-[100vw] sm:max-lg:h-[60vw] lg:h-[45vw] bg-white rounded-xl shadow-xl" id="popup">
+                <div class="w-full h-[10%]">
+                    <img class="max-lg:w-16 lg:w-24 max-lg:h-16 lg:h-24 -mt-6 opacity-80 mx-auto" src="../img/setting.png" alt="setting">
+                    <img class="max-lg:w-16 lg:w-24 max-lg:h-16 lg:h-24 max-lg:-mt-12 lg:-mt-20 opacity-80 right-0 absolute hover:opacity-60 hover:scale-[1.2] duration-200" src="../img/cross.png" alt="cross" onclick="popupClose()">
                 </div>
-                <div class="mt-14 w-[60%] h-[80%] flex flex-col">
-                    <textarea name="inputName" id="inputName" cols="30" rows="10" class="w-[80%] h-[80%] border-4 bg-gray-100" placeholder="eg. 陳大明"></textarea>
-                    <div class="mt-4 px-4 w-[80%] h-[20%] flex justify-between">
-                        <button class="w-24 h-12 p-2 bg-red-300 rounded-xl text-lg text-bold text-white hover:opacity-70 duration-200" onclick="saveList()">儲存名單</button>
-                        <button class="w-24 h-12 p-2 bg-blue-300 rounded-xl text-lg text-bold text-white hover:opacity-70 duration-200" onclick="loadList()">加載名單</button>
+                <div class="w-full h-full flex justify-between">
+                    <div class="w-[20%] h-[70%] py-[3.5rem] max-lg:px-4 lg:px-12 flex flex-col justify-start gap-4">
+                        <button class="max-lg:w-[16vw] lg:w-[8vw] max-lg:h-12 lg:h-16 bg-red-300 p-2 rounded-2xl lg:text-[1.5vw] max-lg:text-[2.5vw] text-white font-bold hover:opacity-70 hover:scale-110 duration-200" onclick="inputName()">名字輸入</button>
+                        <button class="max-lg:w-[16vw] lg:w-[8vw] max-lg:h-12 lg:h-16 bg-blue-300 p-2 rounded-2xl lg:text-[1.5vw] max-lg:text-[2.5vw] text-white font-bold hover:opacity-70 hover:scale-110 duration-200" onclick="CSalert()">桌子數量</button>
+                    </div>
+                    <div class="mt-14 w-[60%] h-[80%] flex flex-col">
+                        <textarea name="inputName" id="inputName" cols="30" rows="10" class="w-[80%] h-[80%] border-4 bg-gray-100 rounded-xl emax-lg:text-[3.2vw] lg:text-[1.8vw]" placeholder="eg. 陳大明"></textarea>
+                        <div class="mt-4 w-[80%] flex justify-between gap-4">
+                            <button class="max-lg:w-[28vw] lg:w-[8vw] max-lg:h-12 lg:h-16 bg-red-300 max-lg:p-1 lg:p-2 rounded-2xl lg:text-[1.5vw] max-lg:text-[2vw] text-white font-bold hover:opacity-70 hover:scale-110 duration-200 overflow-hidden" onclick="saveList()">儲存</button>
+                            <button class="max-lg:w-[28vw] lg:w-[8vw] max-lg:h-12 lg:h-16 bg-blue-300 max-lg:p-1 lg:p-2 rounded-2xl lg:text-[1.5vw] max-lg:text-[2vw] text-white font-bold hover:opacity-70 hover:scale-110 duration-200 overflow-hidden" onclick="loadList()">加載</button>
+                        </div>
+                        <div class="w-full h-2 my-3 lg:text-[1.5vw] max-lg:text-[2vw] text-extrabold text-red-600">^在灰色區域輸入名字^</div>
+                        <div class="w-full h-16 max-lg:my-1 lg:my-3 lg:text-[0.8vw] max-lg:text-[1.2vw] text-bold text-gray-400 overflow-hidden">&nbsp;&nbsp;&nbsp;&nbsp;每換行一次(即Enter)新增一個元素</div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
     <header class="w-full h-[20%]">
-        <div class="w-full h-full bg-blue-100 flex justify-center items-center">
-            <div class="w-[40%] mx-16">
-                <p class="text-3xl md:text-lg text-blue-700 font-bold">座位表 - 六個班</p>
-            </div>
-            <div class="w-[60%] h-full flex justify-between items-center mr-16">
-                <div class="w-[50%] h-full flex justify-start items-center">
-                    <button id="btn-el" class="ml-[10%] w-24 h-18 p-2 text-2xl text-red-400 bg-red-200 border-4 border-red-400 font-bold rounded-xl hover:opacity-80">生成!</button>
+        <div class="w-full h-full bg-blue-100 border-b-2 flex justify-center items-center overflow-hidden">
+                <p class="w-[33%] mx-auto flex justify-center items-center lg:text-[3vw] max-lg:text-[6vw] text-blue-500 font-bold">座位表-6</p>
+                <div class="w-[33%] mx-auto h-full flex justify-center items-center">
+                    <button id="btn-el" class="max-lg:w-[12vw] max-lg:h-[12vw] lg:w-[6vw] lg:h-[6vw] p-2 max-lg:text-[3vw] lg:text-[1.5vw] text-white bg-red-400 font-bold rounded-full shadow-2xl hover:opacity-80 hover:scale-110 duration-300">生成!</button>
                 </div>
-                <div class="w-[50%] h-full flex justify-center items-center">
-                    <a href="../index.html"><button class="w-24 h-18 ml-4 p-4 text-xl text-blue-400 bg-blue-200 border-4 border-blue-400 font-bold rounded-xl hover:opacity-80">返回主頁!</button></a>
+                <div class="w-[33%] mx-auto h-full flex justify-center items-center">
+                    <a href="../index.html"><button class="max-lg:w-[16vw] lg:w-[8vw] max-lg:h-[8vw] lg:h-[6vw] ml-4 max-lg:p-1 lg:p-4 max-lg:text-[2vw] lg:text-[1.2vw] text-white bg-blue-400 shadow-2xl font-bold rounded-full hover:opacity-80 hover:scale-110 duration-300">返回主頁</button></a>
                 </div>
-            </div>
         </div>
     </header>
     <div class="w-full h-[10%] border-1">
@@ -61,32 +60,32 @@
         <div class="mt-8 w-full h-12 bg-blue-300 text-4xl text-center">F6A</div>
         <div class="w-full h-[80%]">
     <ul class="w-[33%] h-auto mx-auto">
-        <li id="seat-a1" class="change flex justify-center items-center"></li>
+        <li id="seat-a1" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-a2" class="change flex justify-center items-center"></li>
-        <li id="seat-a3" class="change flex justify-center items-center"></li>
-        <li id="seat-a4" class="change flex justify-center items-center"></li>
+        <li id="seat-a2" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-a3" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-a4" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-a5" class="change flex justify-center items-center"></li>
-        <li id="seat-a6" class="change flex justify-center items-center"></li>
-        <li id="seat-a7" class="change flex justify-center items-center"></li>
+        <li id="seat-a5" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-a6" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-a7" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-a8" class="change flex justify-center items-center"></li>
-        <li id="seat-a9" class="change flex justify-center items-center"></li>
-        <li id="seat-a10" class="change flex justify-center items-center"></li>
+        <li id="seat-a8" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-a9" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-a10" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-a11" class="change flex justify-center items-center"></li>
-        <li id="seat-a12" class="change flex justify-center items-center"></li>
-        <li id="seat-a13" class="change flex justify-center items-center"></li>
+        <li id="seat-a11" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-a12" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-a13" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-a14" class="change flex justify-center items-center"></li>
-        <li id="seat-a15" class="change flex justify-center items-center"></li>
-        <li id="seat-a16" class="change flex justify-center items-center"></li>
+        <li id="seat-a14" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-a15" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-a16" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <div class="absolute left-0 w-full h-24 bg-red-100 flex justify-between items-center">
         <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
@@ -102,29 +101,29 @@
         <div class="mt-64 w-full h-12 bg-blue-300 text-4xl text-center">F6B</div>
         <div class="w-full h-[80%]">
     <ul class="w-full h-auto mx-auto">
-        <li id="seat-b1" class="change flex justify-center items-center"></li>
-        <li id="seat-b2" class="change flex justify-center items-center"></li>
-        <li id="seat-b3" class="change flex justify-center items-center"></li>
+        <li id="seat-b1" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-b2" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-b3" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-b4" class="change flex justify-center items-center"></li>
-        <li id="seat-b5" class="change flex justify-center items-center"></li>
-        <li id="seat-b6" class="change flex justify-center items-center"></li>
+        <li id="seat-b4" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-b5" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-b6" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-b7" class="change flex justify-center items-center"></li>
-        <li id="seat-b8" class="change flex justify-center items-center"></li>
-        <li id="seat-b9" class="change flex justify-center items-center"></li>
+        <li id="seat-b7" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-b8" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-b9" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-b10" class="change flex justify-center items-center"></li>
-        <li id="seat-b11" class="change flex justify-center items-center"></li>
-        <li id="seat-b12" class="change flex justify-center items-center"></li>
+        <li id="seat-b10" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-b11" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-b12" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-b13" class="change flex justify-center items-center"></li>
-        <li id="seat-b14" class="change flex justify-center items-center"></li>
-        <li id="seat-b15" class="change flex justify-center items-center"></li>
+        <li id="seat-b13" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-b14" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-b15" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
 
     <div class="absolute left-0 w-full h-24 bg-red-100 flex justify-between items-center">
@@ -142,28 +141,28 @@
         <div class="mt-64 w-full h-12 bg-blue-300 text-4xl text-center">F6C</div>
         <div class="w-full h-[80%]">
     <ul class="w-[66.7%] h-auto">
-        <li id="seat-c1" class="change flex justify-center items-center"></li>
-        <li id="seat-c2" class="change flex justify-center items-center"></li>
+        <li id="seat-c1" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-c2" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-c3" class="change flex justify-center items-center"></li>
-        <li id="seat-c4" class="change flex justify-center items-center"></li>
-        <li id="seat-c5" class="change flex justify-center items-center"></li>
+        <li id="seat-c3" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-c4" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-c5" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-c6" class="change flex justify-center items-center"></li>
-        <li id="seat-c7" class="change flex justify-center items-center"></li>
-        <li id="seat-c8" class="change flex justify-center items-center"></li>
+        <li id="seat-c6" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-c7" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-c8" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-c9" class="change flex justify-center items-center"></li>
-        <li id="seat-c10" class="change flex justify-center items-center"></li>
-        <li id="seat-c11" class="change flex justify-center items-center"></li>
+        <li id="seat-c9" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-c10" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-c11" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-c12" class="change flex justify-center items-center"></li>
-        <li id="seat-c13" class="change flex justify-center items-center"></li>
-        <li id="seat-c14" class="change flex justify-center items-center"></li>
+        <li id="seat-c12" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-c13" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-c14" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
 
     <div class="absolute left-0 w-full h-24 bg-red-100 flex justify-between items-center">
@@ -182,27 +181,27 @@
         <div class="mt-64 w-full h-12 bg-blue-300 text-4xl text-center">F6D</div>
         <div class="w-full h-[80%]">
     <ul class="w-[33.3%] h-auto">
-        <li id="seat-d1" class="change flex justify-center items-center"></li>
+        <li id="seat-d1" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
      </ul>
     <ul class="w-full h-auto">
-        <li id="seat-d2" class="change flex justify-center items-center"></li>
-        <li id="seat-d3" class="change flex justify-center items-center"></li>
-        <li id="seat-d4" class="change flex justify-center items-center"></li>
+        <li id="seat-d2" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-d3" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-d4" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-d5" class="change flex justify-center items-center"></li>
-        <li id="seat-d6" class="change flex justify-center items-center"></li>
-        <li id="seat-d7" class="change flex justify-center items-center"></li>
+        <li id="seat-d5" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-d6" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-d7" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-d8" class="change flex justify-center items-center"></li>
-        <li id="seat-d9" class="change flex justify-center items-center"></li>
-        <li id="seat-d10" class="change flex justify-center items-center"></li>
+        <li id="seat-d8" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-d9" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-d10" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-d11" class="change flex justify-center items-center"></li>
-        <li id="seat-d12" class="change flex justify-center items-center"></li>
-        <li id="seat-d13" class="change flex justify-center items-center"></li>
+        <li id="seat-d11" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-d12" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-d13" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <div class="absolute left-0 w-full h-24 bg-red-100 flex justify-between items-center">
         <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
@@ -219,28 +218,28 @@
         <div class="mt-64 w-full h-12 bg-blue-300 text-4xl text-center">F6E</div>
         <div class="w-full h-[80%]">
     <ul class="w-[66.7%] h-auto">
-        <li id="seat-e1" class="change flex justify-center items-center"></li>
-        <li id="seat-e2" class="change flex justify-center items-center"></li>
+        <li id="seat-e1" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-e2" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-e3" class="change flex justify-center items-center"></li>
-        <li id="seat-e4" class="change flex justify-center items-center"></li>
-        <li id="seat-e5" class="change flex justify-center items-center"></li>
+        <li id="seat-e3" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-e4" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-e5" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-e6" class="change flex justify-center items-center"></li>
-        <li id="seat-e7" class="change flex justify-center items-center"></li>
-        <li id="seat-e8" class="change flex justify-center items-center"></li>
+        <li id="seat-e6" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-e7" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-e8" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-e9" class="change flex justify-center items-center"></li>
-        <li id="seat-e10" class="change flex justify-center items-center"></li>
-        <li id="seat-e11" class="change flex justify-center items-center"></li>
+        <li id="seat-e9" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-e10" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-e11" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-e12" class="change flex justify-center items-center"></li>
-        <li id="seat-e13" class="change flex justify-center items-center"></li>
-        <li id="seat-e14" class="change flex justify-center items-center"></li>
+        <li id="seat-e12" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-e13" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-e14" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <div class="absolute left-0 w-full h-24 bg-red-100 flex justify-between items-center">
         <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
@@ -257,27 +256,27 @@
         <div class="mt-64 w-full h-12 bg-blue-300 text-4xl text-center">F6F</div>
         <div class="w-full h-[80%]">
     <ul class="w-[33%] h-auto mx-auto">
-        <li id="seat-f1" class="change flex justify-center items-center"></li>
+        <li id="seat-f1" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-f2" class="change flex justify-center items-center"></li>
-        <li id="seat-f3" class="change flex justify-center items-center"></li>
-        <li id="seat-f4" class="change flex justify-center items-center"></li>
+        <li id="seat-f2" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-f3" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-f4" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-f5" class="change flex justify-center items-center"></li>
-        <li id="seat-f6" class="change flex justify-center items-center"></li>
-        <li id="seat-f7" class="change flex justify-center items-center"></li>
+        <li id="seat-f5" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-f6" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-f7" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-f8" class="change flex justify-center items-center"></li>
-        <li id="seat-f9" class="change flex justify-center items-center"></li>
-        <li id="seat-f10" class="change flex justify-center items-center"></li>
+        <li id="seat-f8" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-f9" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-f10" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <ul class="w-full h-auto">
-        <li id="seat-f11" class="change flex justify-center items-center"></li>
-        <li id="seat-f12" class="change flex justify-center items-center"></li>
-        <li id="seat-f13" class="change flex justify-center items-center"></li>
+        <li id="seat-f11" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-f12" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
+        <li id="seat-f13" class="change flex justify-center items-center max-lg:text-[2vw] lg:text-[1.5vw] overflow-auto"></li>
     </ul>
     <div class="absolute left-0 w-full h-24 bg-red-100 flex justify-between items-center">
         <div class="bottom-0 w-48 h-24 bg-red-300 flex justify-center items-center">
