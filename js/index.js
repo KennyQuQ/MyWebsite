@@ -63,31 +63,31 @@ function showVideo(num) {
     if (num === 0) {
         Videos.style.backgroundImage = "url('./img/background/video1.png')";
         Titles.textContent = "懂理財，你才能成為人才！";
-        Dis.innerHTML = "无论你是学生、职场新人还是已经在职场摸爬滚打多年，理财技能都是你成功的关键。这部影片将带你了解为什么理财是人才的必备技能。";
+        Dis.innerHTML = "無論你是學生、職場新人還是已經在職場摸爬滾打多年，理財技能都是你成功的關鍵。這部影片將帶你了解為什麼理財是人才的必備技能。";
         Links.href="https://youtu.be/MVssUmrLefc";
     } else if (num === 1) {
         Videos.style.backgroundImage = "url('./img/background/video2.png')";
         Titles.textContent = "來自物理室的你♂♂";
-        Dis.textContent = "在一所大学的物理实验室中，两位主角，小昌和小康，在一次意外的科学实验中发现了一扇通往时空的神秘之门。这个物理室成为了他们独特而令人着迷的爱情舞台。\
-        小昌是一名年轻的物理学家，充满好奇心和创造力，他一直在探索时空的奥秘。小康是一位天赋异禀的工程师，精通机械制作和发明创造。他们的相遇和共同的科学兴趣使他们开始了一段令人心动的冒险。";
+        Dis.textContent = "在一所大學的物理實驗室中，兩位主角，小昌和小康，在一次意外的科學實驗中發現了一扇通往時空的神秘之門。這個物理室成為了他們獨特而令人著迷的愛情舞台。 \
+        小昌是一名年輕的物理學家，充滿好奇心和創造力，他一直在探索時空的奧秘。小康是一位天賦異禀的工程師，精通機械製作和發明創造。他們的相遇和共同的科學興趣使他們開始了一段令人心動的冒險。";
         Links.href="https://youtu.be/0SVOQ-QLt9s";
     } else if (num === 2) {
         Videos.style.backgroundImage = "url('./img/background/video3.png')";
         Titles.textContent = "Press Conference";
-        Dis.textContent = "此影片暫時不可用🙇\n此影片暫時不可用🙇";
+        Dis.textContent = "此影片暫時不可用🙇";
         Links.href="https://youtu.be";
         // window.alert("此影片暫時不可用🙇")
         // Links.href="https://youtu.be/4hmBnT3OL9s";
     } else if (num === 3) {
         Videos.style.backgroundImage = "url('./img/background/video4.png')";
         Titles.textContent = "黃六醫生 vs. 膽結石";
-        Dis.textContent = "这部影片聚焦于一位杰出的医生，黄六医生，以及他在胆结石治疗领域的卓越成就。胆结石是一种常见但痛苦的健康问题，它可以严重影响患者的生活质量。但有幸的是，黄六医生以他的医学专业知识和同情心，一直在帮助患者克服这一问题。";
+        Dis.textContent = "這部影片聚焦於一位傑出的醫生，黃六醫生，以及他在膽結石治療領域的卓越成就。膽結石是一種常見但痛苦的健康問題，它可以嚴重影響患者的生活質量。但有幸的是，黃六醫生以他的醫學專業知識和同情心，一直在幫助患者克服這一問題。";
         Links.href="https://youtu.be/tYec2NzgmI4";
     }  else if (num === 4) {
         Videos.style.backgroundImage = "url('./img/background/video5.png')";
         Titles.textContent = "F6D 感謝老師的話";
-        Dis.textContent = "这部影片致敬了教育领域的默默奉献者 —— 老师们。在一所名为 F6D 的学校中，一群学生为了表达他们对老师的深深感激之情，决定共同制作一部特别的影片。\
-        在影片中，你将见证学生们分享了关于他们的老师们的故事和感受。这些故事包括老师的启发、激励和帮助，以及老师们在学生生活中所起到的关键作用。学生们用真诚的话语和深情的回顾，感谢了那些曾经引导他们走向未来的导师。";
+        Dis.textContent = "這部影片致敬了教育領域的默默奉獻者。在F6D 中，一群學生為了表達他們對老師的深深感激之情，決定共同製作一部特別的影片。 \
+        在影片中，你將見證學生們分享了關於他們的老師們的故事和感受。這些故事包括老師的啟發、激勵和幫助，以及老師們在學生生活中所起到的關鍵作用。學生們用真誠的話語和深情的回顧，感謝了那些曾經引導他們走向未來的導師。";
         Links.href="https://youtu.be/EG8bWeuXEWg";
     }
 }
@@ -106,33 +106,86 @@ const list = document.querySelectorAll('.list');
     item.addEventListener('click',activeLink));
 
 // waypoints
+
 window.addEventListener("scroll", function () {
     var scrollPosition = window.scrollY;
     var totalHeight = document.body.scrollHeight - window.innerHeight;
     var scrollPercentage = (scrollPosition / totalHeight) * 100;
     console.log(scrollPercentage.toFixed(2));
-    if(scrollPercentage.toFixed(2) <= 11){
-        list.forEach((item) =>
-        item.classList.remove('active'));
-        list[0].classList.add('active');
-    } else if(scrollPercentage.toFixed(2) <= 53){
-        list.forEach((item) =>
-        item.classList.remove('active'));
-        list[1].classList.add('active');
-    } else if(scrollPercentage.toFixed(2) <= 63){
-        list.forEach((item) =>
-        item.classList.remove('active'));
-        list[2].classList.add('active');
-    } else if(scrollPercentage.toFixed(2) <= 77){
-        list.forEach((item) =>
-        item.classList.remove('active'));
-        list[3].classList.add('active');
-    } else{
-        list.forEach((item) =>
-        item.classList.remove('active'));
-        list[4].classList.add('active');
+    console.log(window.screen.width);
+    // laptop & pad
+    if(window.screen.width >= 769) {   
+        if(scrollPercentage.toFixed(2) <= 9){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[0].classList.add('active');
+        } else if(scrollPercentage.toFixed(2) <= 67){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[1].classList.add('active');
+        } else if(scrollPercentage.toFixed(2) <= 74.2){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[2].classList.add('active');
+        } else if(scrollPercentage.toFixed(2) <= 86){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[3].classList.add('active');
+        } else{
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[4].classList.add('active');
+        }
+    };
+    
+    
+    if(window.screen.width >= 512 && window.screen.width < 769) {   
+        if(scrollPercentage.toFixed(2) <= 9){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[0].classList.add('active');
+        } else if(scrollPercentage.toFixed(2) <= 65){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[1].classList.add('active');
+        } else if(scrollPercentage.toFixed(2) <= 72){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[2].classList.add('active');
+        } else if(scrollPercentage.toFixed(2) <= 80){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[3].classList.add('active');
+        } else{
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[4].classList.add('active');
+        }
     }
-  });
+    if(window.screen.width < 512) {   
+        if(scrollPercentage.toFixed(2) <= 9){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[0].classList.add('active');
+        } else if(scrollPercentage.toFixed(2) <= 65){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[1].classList.add('active');
+        } else if(scrollPercentage.toFixed(2) <= 71){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[2].classList.add('active');
+        } else if(scrollPercentage.toFixed(2) <= 82){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[3].classList.add('active');
+        } else{
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            list[4].classList.add('active');
+        }
+    }
+    });
 
   // reveal
 window.addEventListener('scroll', reveal);
