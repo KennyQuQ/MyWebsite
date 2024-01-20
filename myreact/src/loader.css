@@ -1,0 +1,42 @@
+/* Add these styles for the loader */
+.loader-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .loader-circle {
+    border: 8px solid transparent;
+    border-top: 8px solid #0aa2ad;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    animation: spin 1s linear infinite;
+    margin-right: 16px;
+  }
+  
+  .loader-line {
+    width: 2px;
+    height: 20px;
+    background-color: #0aa2ad;
+    opacity: 0.5;
+    margin-right: 16px;
+    animation: pulse 1s ease-in-out infinite alternate;
+  }
+  
+  .loader-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  @keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes pulse {
+    100% {
+      opacity: 0.3;
+    }
+  }
+  

@@ -1,0 +1,103 @@
+.learn-more {
+    position: relative;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    left: 20%;
+    transform: translate(-50%);
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    width: 12rem;
+    height: auto;
+}
+
+.learn-more .button-circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #3dbc54;
+    border-radius: 1.625rem;
+}
+
+.learn-more .button-circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+.learn-more .button-circle .icon.blue-arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+.learn-more .button-circle .icon.blue-arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+.learn-more .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #d1d1d1;
+    font-weight: 500;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0; /* Initial opacity set to 0 */
+}
+
+.learn-more:hover .button-circle {
+    width: 100%;
+}
+
+.learn-more:hover .button-circle .icon.blue-arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+    animation: moving 1s infinite ease-in-out;
+}
+
+.learn-more:hover .button-text {
+    color: #fff;
+    opacity: 1; /* Transition to full opacity on hover */
+}
+
+@keyframes moving {
+    0% {
+        transform: translate(1rem, 0);
+    }
+    50% {
+        transform: translate(1.3rem, 0);
+    }
+    100% {
+        transform: translate(1rem, 0);
+    }
+}

@@ -1,0 +1,29 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* 
+:hover::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+:hover::-webkit-scrollbar-track {
+  background: transparent;
+  opacity: 0;
+}
+
+:hover::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.35);
+}
+:hover::-webkit-scrollbar-corner {background-color: transparent;} */

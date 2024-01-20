@@ -1,0 +1,28 @@
+.rolling-sign-container {
+    position: relative;
+    height: 100px; /* Set the desired height */
+    width: 2000px; /* Set the desired width */
+    background-color: #00f587; /* Set the background color */
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    overflow: hidden;
+  }
+  
+  .sign-text {
+    width: 2000px; /* Set the desired width */
+    font-size: 64px; /* Set the font size */
+    color: #000; /* Set the text color */
+    margin: 0;
+    padding: 10px; /* Adjust padding as needed */
+  }
+  
+  .sign-left {
+    text-align: right;
+  }
+  .sign-right {
+    text-align: left;
+  }
+  html {
+    overflow-x: hidden;
+  }

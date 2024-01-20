@@ -1,0 +1,62 @@
+/* AnimationPage.css */
+.animation-page {
+  position: relative;
+  height: 200vh; /* Adjust the height based on your content */
+  background-color: rgba(255, 255, 255, 0); /* Fully transparent white */
+  transition: background-color 0.5s ease-in-out; /* Add transition for smooth color change */
+}
+
+.overlay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16rem; /* Adjust the font size for the big word */
+  color: #3498db; /* Text color */
+  opacity: 0; /* Initial opacity */
+  transition: opacity 0.5s ease-in-out, transform 0.1s linear; /* Add transitions */
+}
+
+.overlay-update {
+  opacity: 1; /* Initial opacity */
+  transform: translateY(-50%); /* Apply a parallax effect (adjust as needed) */
+}
+
+.white-background {
+  background-color: rgba(255, 255, 255, 1); /* Fully not transparent white */
+}
+
+.sign {
+  position: absolute;
+  padding: 30px; /* Adjust the padding for bigger signs */
+  background-color: #3498db; /* Adjust the background color */
+  color: #ffffff; /* Adjust the text color */
+  border-radius: 15px; /* Adjust the border-radius for rounded corners */
+  font-size: 24px; /* Adjust the font size for bigger text */
+  transition: transform 0s ease-in-out;
+}
+
+.sign1 {
+  top: 50%;
+  left: 50%;
+  transform-origin: top left;
+}
+
+.sign2 {
+  top: 60%;
+  left: 60%;
+  transform-origin: bottom right;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+.emoji-rain-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+}

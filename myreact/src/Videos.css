@@ -1,0 +1,41 @@
+.body {
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  flex: 0 0 35%; /* Adjust the width of each card as needed */
+  margin-right: 32px; /* Adjust the margin between cards as needed */
+  background-color: #f3f7fc;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative; /* Add this line */
+}
+
+.card-image {
+  height: 50%; /* Adjust the height of the image as needed */
+  background-size: cover;
+  background-position: center;
+}
+
+.card-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  margin-bottom: 0.8rem;
+  color: #0aa2ad;
+  font-weight: bold;
+}
+
+.card-description {
+  color: #879395;
+  font-size: 1.2vw; /* Adjust the font size as needed */
+  flex-grow: 1;
+}

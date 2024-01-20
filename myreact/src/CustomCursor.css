@@ -1,0 +1,15 @@
+body {
+    cursor: none; /* Hide the default cursor */
+  }
+  
+  .custom-cursor {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    background-color: #808080; /* Gray color */
+    opacity: 0.5; /* Make it slightly transparent */
+    border-radius: 50%;
+    pointer-events: none; /* Ensure the cursor doesn't interfere with other elements */
+    z-index: 9999; /* Set a high z-index to make sure it appears above other elements */
+  }
+  
