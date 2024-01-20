@@ -155,7 +155,7 @@ const Videos = () => {
   {videosData.map((card, index) => (
     <div
       key={index}
-      className="card max-md:w-[70%] md:w-[35%] max-md:h-[500%] md:h-[300%] shadow-2xl rounded-full duration-300"
+      className="card max-md:w-[70%] md:w-[35%] max-md:h-[500%] md:h-[300%] shadow-2xl duration-300"
       style={{ transform: `translateX(${(currentIndex - 2) * -100}%)` }}
     >
             <div className="card-image" style={{ backgroundPosition: 'center', backgroundSize: 'cover', backgroundImage: `url(${card.backgroundImage})` }}></div>

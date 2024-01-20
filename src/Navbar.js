@@ -3,11 +3,11 @@ import './index.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 
-const Navbar = ({ elements }) => {
+const Navbar = ({ intersectionResults }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const scrollTimeoutRef = useRef(null);
-
+  
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -16,9 +16,29 @@ const Navbar = ({ elements }) => {
     setIsHovered(false);
   };
 
+  const list = document.querySelectorAll('.list');
+
+  window.onload = function () {
+    document.querySelector('.home').classList.add('active');
+  };
+  
+  list.forEach((item, index) => item.addEventListener('click', () => activateLink(index)));
+  
+  function activateLink(index) {
+    if (index >= 0 && index < list.length) {
+      list.forEach((item) => item.classList.remove('active'));
+      list[index].classList.add('active');
+    } else {
+      console.error(`Index ${index} is out of bounds for the list array.`);
+    }
+  }
+  
+  activateLink(intersectionResults - 1);
+
+
   useEffect(() => {
+    
     const handleScroll = () => {
-      
 
       setIsScrolled(true);
 
@@ -53,69 +73,34 @@ const Navbar = ({ elements }) => {
   };
 
   useEffect(() => {
-    const list = document.querySelectorAll('.list');
-
-window.onload = function () {
-  document.querySelector('.home').classList.add('active');
-};
-
-function activateLink(index) {
-  list.forEach((item) => item.classList.remove('active'));
-  list[index].classList.add('active');
-}
-
-list.forEach((item, index) => item.addEventListener('click', () => activateLink(index)));
-
-// Define waypoints for different screen sizes
-const waypoints = {
-  large: [
-    { start: 0, end: 24.2 },
-    { start: 24.2, end: 82.69 },
-    { start: 82.69, end: 91.25 },
-    { start: 91.25, end: 95.25 },
-    { start: 95.25, end: 100 },
-  ],
-  medium: [
-    { start: 0, end: 9 },
-    { start: 10, end: 65 },
-    { start: 66, end: 72 },
-    { start: 73, end: 80 },
-    { start: 81, end: 100 },
-  ],
-  small: [
-    { start: 0, end: 9 },
-    { start: 10, end: 65 },
-    { start: 66, end: 71 },
-    { start: 72, end: 82 },
-    { start: 83, end: 100 },
-  ],
-};
-
+    
 window.addEventListener('scroll', function () {
-  var scrollPosition = window.scrollY;
-  var totalHeight = document.body.scrollHeight - window.innerHeight;
-  var scrollPercentage = (scrollPosition / totalHeight) * 100;
-  console.log(scrollPercentage.toFixed(2));
+  
+  console.log(intersectionResults);
+  // var scrollPosition = window.scrollY;
+  // var totalHeight = document.body.scrollHeight - window.innerHeight;
+  // var scrollPercentage = (scrollPosition / totalHeight) * 100;
+  // // console.log(scrollPercentage.toFixed(2));
+  // console.log(scrollPosition);
 
-  // Determine the screen size
-  let screenSize;
-  if (window.screen.width >= 769) {
-    screenSize = 'large';
-  } else if (window.screen.width >= 512 && window.screen.width < 769) {
-    screenSize = 'medium';
-  } else {
-    screenSize = 'small';
-  }
+  // // Determine the screen size
+  // let screenSize;
+  // if (window.screen.width >= 769) {
+  //   screenSize = 'large';
+  // } else if (window.screen.width >= 512 && window.screen.width < 769) {
+  //   screenSize = 'medium';
+  // } else {
+  //   screenSize = 'small';
+  // }
 
-  // Find the active waypoint based on screen size
-  const activeWaypoint = waypoints[screenSize].find(
-    (waypoint) => scrollPercentage.toFixed(2) >= waypoint.start && scrollPercentage.toFixed(2) <= waypoint.end
-  );
+  // // Find the active waypoint based on screen size
+  // const activeWaypoint = waypoints[screenSize].find(
+  //   (waypoint) => scrollPercentage.toFixed(2) >= waypoint.start && scrollPercentage.toFixed(2) <= waypoint.end
+  // );
 
-  // Activate the corresponding link
-  if (activeWaypoint) {
-    activateLink(waypoints[screenSize].indexOf(activeWaypoint));
-  }
+  // // Activate the corresponding link
+  // if (activeWaypoint) {
+  // }
 });
 
 

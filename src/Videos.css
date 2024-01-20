@@ -1,5 +1,5 @@
 .body {
-  overflow: hidden;
+  overflow: auto;
 }
 
 .carousel-container {
@@ -11,7 +11,7 @@
   flex: 0 0 35%; /* Adjust the width of each card as needed */
   margin-right: 32px; /* Adjust the margin between cards as needed */
   background-color: #f3f7fc;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
   position: relative; /* Add this line */
 }

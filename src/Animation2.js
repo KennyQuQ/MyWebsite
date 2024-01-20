@@ -1,13 +1,35 @@
 // AnimationPage.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Animation.css'; // Import the styles for AnimationPage
 import EmojiRain from './EmojiRain';
 
 const AnimationPage = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [isin, setisin] = useState(false);
+  const [bottom, setbottom] = useState(0);
+  const componentRef = useRef(null);
 
-  const parallaxOffset1 = (scrollY - 10100) * 0.5; // Adjust the parallax effect by changing the multiplier
-  const parallaxOffset2 = (scrollY - 10100) * 0.5; // Adjust the parallax effect by changing the multiplier
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+      
+      if (componentRef.current) {
+        const rect = componentRef.current.getBoundingClientRect();
+        setisin(rect.top < 150 && rect.bottom > -150);
+        setbottom(rect.bottom);
+      }
+
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const parallaxOffset1 = (bottom - 1500) * -0.3; // Adjust the parallax effect by changing the multiplier
+  const parallaxOffset2 = (bottom - 1500) * -0.3; // Adjust the parallax effect by changing the multiplier
 
   const overlayStyle1 = {
     top: '30%',
@@ -19,33 +41,22 @@ const AnimationPage = () => {
     transform: `translateY(${parallaxOffset2}px)`, // Adding translateZ for a 3D effect
   };
 
-  const opacity = Math.max(0, 1 - (scrollY - 10200) / 1000);
+  const opacity = Math.max(0, bottom / 1000);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
-    <div className={`animation-page`}>
+    <div className={`animation-page`} ref={componentRef}>
     <div style={{ opacity }}>
-        {scrollY > 9500 && scrollY < 11200  && <EmojiRain />}
+        {isin && <EmojiRain />}
     </div>
-     <div className={`overlay ${scrollY > 9500 ? 'overlay-update' : ''}`} style={overlayStyle1}>
+     <div className={`overlay ${isin ? 'overlay-update' : ''}`} style={overlayStyle1}>
         還
       </div>
-      <div className={`overlay ${scrollY > 9500 ? 'overlay-update' : ''}`} style={overlayStyle2}>
+      <div className={`overlay ${isin ? 'overlay-update' : ''}`} style={overlayStyle2}>
         在這?
       </div>
       <div className="sign sign1" style={{
-        transform: `translate(${(-1) * (scrollY * 2 - 20000)}px, ${(scrollY * 1 - 10000)}px) rotate(-30deg)`,
+        transform: `translate(${(-1) * (bottom * -2 + 2000)}px, ${(bottom * -1 + 1200)}px) rotate(-30deg)`,
         width: '3000px', // Adjust the width as needed
         height: '200px', // Adjust the height as needed
         fontSize: '5rem', // Adjust the font size as needed
@@ -57,7 +68,7 @@ const AnimationPage = () => {
         </div>
 
 <div className="sign sign2" style={{
-  transform: `translate(${scrollY * 2 - 22000}px, ${scrollY * 1 - 9000}px) rotate(30deg)`,
+  transform: `translate(${bottom * -2}px, ${bottom * -1 + 2200}px) rotate(30deg)`,
   width: '3000px', // Adjust the width as needed
   height: '200px', // Adjust the height as needed
   fontSize: '5rem', // Adjust the font size as needed

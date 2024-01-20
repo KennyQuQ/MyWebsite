@@ -35,49 +35,28 @@ function App() {
   const contactRef = useRef(null);
 
   const refs = [homeRef, experienceRef, skillRef, projectsRef, contactRef];
+  const [intersectionResults, setIntersectionResults] = useState(0);
+
+  const handleScroll = () => {
+    const results = refs.map((ref) => {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        return rect.top < 100;
+      }
+      return false; // Default to false if ref.current is null
+    });
+
+    const trueValue = results.filter(value => value === true).length;
+    setIntersectionResults(trueValue);
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      console.log('Scroll Event');
-      // Implement your logic here
-    };
-  
     window.addEventListener('scroll', handleScroll);
-  
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
-  
-  useEffect(() => {
-    console.log("Intersection Observer Effect Triggered");
-  
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          console.log(entry.target.getAttribute('name'));
-          alert(entry.target.getAttribute('name'));
-        }
-      });
-    };
-  
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.5,
-    };
-  
-    const observer = new IntersectionObserver(handleIntersection, observerOptions);
-  
-    if (homeRef.current) {
-      observer.observe(homeRef.current);
-    }
-  
-    return () => {
-      observer.disconnect();
-    };
-  }, [homeRef]);  
-  
+  }, [refs]);
 
   const containerStyle = {
     scrollbarWidth: 'thin',
@@ -92,38 +71,42 @@ function App() {
   return (
     <div style={containerStyle}>
       <Preloader images={imagesToPreload} onLoad={handleLoad}>
-        <Element name="home" ref={homeRef}>
-          <header className="h-screen z-50">
-          <Navbar
-            elements={{
-              home: homeRef,
-              experience: experienceRef,
-              contact: skillRef,
-              projects: projectsRef,
-              contact: contactRef,
-            }}
-          />
-            <Header />
-          </header>
+        <Element name="home">
+          <div ref={homeRef}>
+            <header className="h-screen z-50">
+            <Navbar
+              intersectionResults={intersectionResults}  // Make sure to pass it here
+            />
+              <Header />
+            </header>
           <Project />
           <Animation1 />
+          </div>
         </Element>
-        <Element name="experience" ref={experienceRef}>
-          <MyExperiences />
+        <Element name="experience">
+          <div ref={experienceRef}>
+            <MyExperiences />
+          </div>
         </Element>
-        <Element name="skill" ref={skillRef}>
-          <Animation2 />
-          <Skill />
+        <Element name="skill">
+          <div ref={skillRef}>
+            <Animation2 />
+            <Skill />
+          </div>
         </Element>
-        <Element name="projects" ref={projectsRef}>
-          <Videos />
-          <SmallPrograms />
+        <Element name="projects">
+          <div ref={projectsRef}>
+            <Videos />
+            <SmallPrograms />
+          </div>
         </Element>
-        <Element name="contact" ref={contactRef}>
-          <Contact />
+        <Element name="contact">
+          <div ref={contactRef}>
+            <Contact />
+            <BackToTop />
+            <Footer />
+          </div>
         </Element>
-        <BackToTop />
-        <Footer />
         <CustomCursor />
       </Preloader>
     </div>
