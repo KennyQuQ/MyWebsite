@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MyWebsite/static/css/main.524e99db.css",
-    "main.js": "/MyWebsite/static/js/main.8cfadfe6.js",
+    "main.css": "/MyWebsite/static/css/main.e66d587f.css",
+    "main.js": "/MyWebsite/static/js/main.33d073b1.js",
     "static/js/787.c20c0ea2.chunk.js": "/MyWebsite/static/js/787.c20c0ea2.chunk.js",
     "static/media/Shelter.mp4": "/MyWebsite/static/media/Shelter.108e52d74f763dc7b638.mp4",
     "static/media/experience1.jpg": "/MyWebsite/static/media/experience1.9f0f65e39b60d6e70cbb.jpg",
@@ -15,12 +15,12 @@
     "static/media/experience3.jpg": "/MyWebsite/static/media/experience3.086a8fa9dd61e35a2379.jpg",
     "static/media/bush.png": "/MyWebsite/static/media/bush.50fbfc5c09dd6f3c8397.png",
     "index.html": "/MyWebsite/index.html",
-    "main.524e99db.css.map": "/MyWebsite/static/css/main.524e99db.css.map",
-    "main.8cfadfe6.js.map": "/MyWebsite/static/js/main.8cfadfe6.js.map",
+    "main.e66d587f.css.map": "/MyWebsite/static/css/main.e66d587f.css.map",
+    "main.33d073b1.js.map": "/MyWebsite/static/js/main.33d073b1.js.map",
     "787.c20c0ea2.chunk.js.map": "/MyWebsite/static/js/787.c20c0ea2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.524e99db.css",
-    "static/js/main.8cfadfe6.js"
+    "static/css/main.e66d587f.css",
+    "static/js/main.33d073b1.js"
   ]
 }
