@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import i18n from './i18n.js';
 import Navbar from './Navbar';
 import Header from './Header';
 import MyExperiences from './MyExperiences';
@@ -15,16 +16,42 @@ import Animation2 from './Animation2';
 import { Element } from 'react-scroll';
 import CustomCursor from './CustomCursor';
 import Skill from './Skill';
-
-import experience1 from './img/experience/experience1.jpg';
-import experience2 from './img/experience/experience2.jpg';
-import experience3 from './img/experience/experience3.jpg';
 import BackToTop from './Back2Top';
 
+import experience_image_1 from './img/experience/experience1.jpg';
+import experience_image_2 from './img/experience/experience2.jpg';
+import experience_image_3 from './img/experience/experience3.jpg';
+import experience_image_4 from './img/experience/experience4.jpg';
+import experience_image_5 from './img/experience/experience5.jpg';
+import experience_image_6 from './img/experience/experience6.jpg';
+import experience_image_7 from './img/experience/experience7.jpg';
+import experience_image_8 from './img/experience/experience8.jpg';
+import experience_image_9 from './img/experience/experience9.jpg';
+import experience_image_10 from './img/experience/experience10.jpg';
+import experience_image_11 from './img/experience/experience11.jpg';
+import experience_image_12 from './img/experience/experience12.jpg';
+import experience_image_13 from './img/experience/experience13.jpg';
+import experience_image_14 from './img/experience/experience14.jpg';
+import project1img from './img/project/project1img.png';
+import project1vid from './img/project/project1vid.mp4';
+
 const imagesToPreload = [
-  experience1,
-  experience2,
-  experience3,
+  experience_image_1,
+  experience_image_2,
+  experience_image_3,
+  experience_image_4,
+  experience_image_5,
+  experience_image_6,
+  experience_image_7,
+  experience_image_8,
+  experience_image_9,
+  experience_image_10,
+  experience_image_11,
+  experience_image_12,
+  experience_image_13,
+  experience_image_14,
+  project1img,
+  project1vid,
 ];
 
 function App() {
@@ -33,11 +60,26 @@ function App() {
   const skillRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
+  const animation1Ref = useRef(null);
+  const animation2Ref = useRef(null);
+  const pjRef = useRef(null);
 
   const refs = [homeRef, experienceRef, skillRef, projectsRef, contactRef];
   const [intersectionResults, setIntersectionResults] = useState(0);
+  const [animation1bottom, setAnimation1bottom] = useState(0);
+  const [animation2bottom, setAnimation2bottom] = useState(0);
+  const [experienceisin, setexperienceisin] = useState(false);
+  const [animation2isin, setAnimation2isin] = useState(false);
+  const [animation2over, setAnimation2over] = useState(false);
 
   const handleScroll = () => {
+    setAnimation2isin(animation2Ref.current.getBoundingClientRect().top < 150 && animation2Ref.current.getBoundingClientRect().bottom > -150);
+    setAnimation2isin(animation2Ref.current.getBoundingClientRect().top < 150 && animation2Ref.current.getBoundingClientRect().bottom > -150);
+    setexperienceisin(pjRef.current.getBoundingClientRect().top < -1250 && animation2Ref.current.getBoundingClientRect().top > 150);
+    setAnimation2over(animation2Ref.current.getBoundingClientRect().top < 150);
+    setAnimation1bottom(animation1Ref.current.getBoundingClientRect().bottom);
+    setAnimation2bottom(animation2Ref.current.getBoundingClientRect().bottom);
+
     const results = refs.map((ref) => {
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect();
@@ -74,23 +116,27 @@ function App() {
         <Element name="home">
           <div ref={homeRef}>
             <header className="h-screen z-50">
-            <Navbar
-              intersectionResults={intersectionResults}  // Make sure to pass it here
-            />
+            <Navbar intersectionResults={intersectionResults} isin={experienceisin} />
               <Header />
             </header>
-          <Project />
-          <Animation1 />
+            <div ref={pjRef}>
+              <Project />
+            </div>
+            <div ref={animation1Ref}>
+              <Animation1 bottom={animation1bottom} />
+            </div>
           </div>
         </Element>
         <Element name="experience">
           <div ref={experienceRef}>
-            <MyExperiences />
+            <MyExperiences over={animation2over} bottom={animation1bottom} />
           </div>
         </Element>
         <Element name="skill">
           <div ref={skillRef}>
-            <Animation2 />
+            <div ref={animation2Ref}>
+              <Animation2 isin={animation2isin} bottom={animation2bottom} />
+            </div>
             <Skill />
           </div>
         </Element>

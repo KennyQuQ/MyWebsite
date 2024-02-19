@@ -1,5 +1,6 @@
 .body {
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .carousel-container {
@@ -8,12 +9,12 @@
 }
 
 .card {
-  flex: 0 0 35%; /* Adjust the width of each card as needed */
   margin-right: 32px; /* Adjust the margin between cards as needed */
   background-color: #f3f7fc;
   border-radius: 5px;
-  overflow: hidden;
   position: relative; /* Add this line */
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .card-image {
@@ -23,7 +24,6 @@
 }
 
 .card-content {
-  padding: 1rem;
   display: flex;
   flex-direction: column;
 }
@@ -36,6 +36,5 @@
 
 .card-description {
   color: #879395;
-  font-size: 1.2vw; /* Adjust the font size as needed */
   flex-grow: 1;
 }

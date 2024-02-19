@@ -17,7 +17,6 @@ const Scrollbar = () => {
     <div style={containerStyle}>
       <div style={contentStyle}>
         {/* Your scrollable content goes here */}
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
       </div>
     </div>
   );

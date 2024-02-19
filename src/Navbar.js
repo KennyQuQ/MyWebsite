@@ -1,13 +1,32 @@
 // Navbar.js
 import './index.css';
+import i18n from './i18n.js';
+import { useTranslation } from 'react-i18next';
 import React, { useState, useEffect, useRef } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 
-const Navbar = ({ intersectionResults }) => {
+const Navbar = ({ intersectionResults, isin }) => {
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const scrollTimeoutRef = useRef(null);
   
+  useEffect(() => {
+    // Log the current language
+    console.log("Current language:", i18n.language);
+
+    // Try accessing a translation key and log it
+    console.log("Translation for 'home':", t('home'));
+
+    // Log all keys in the default namespace (if you want to check what's loaded)
+    const keys = i18n.store.data[i18n.language]?.translations ? Object.keys(i18n.store.data[i18n.language].translations) : [];
+    console.log("Loaded keys:", keys);
+  }, [i18n, t]);
+  
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
+
   const handleMouseEnter = () => {
     setIsHovered(true);
   };
@@ -32,14 +51,12 @@ const Navbar = ({ intersectionResults }) => {
       console.error(`Index ${index} is out of bounds for the list array.`);
     }
   }
-  
+
   activateLink(intersectionResults - 1);
 
 
   useEffect(() => {
-    
     const handleScroll = () => {
-
       setIsScrolled(true);
 
       clearTimeout(scrollTimeoutRef.current);
@@ -77,30 +94,6 @@ const Navbar = ({ intersectionResults }) => {
 window.addEventListener('scroll', function () {
   
   console.log(intersectionResults);
-  // var scrollPosition = window.scrollY;
-  // var totalHeight = document.body.scrollHeight - window.innerHeight;
-  // var scrollPercentage = (scrollPosition / totalHeight) * 100;
-  // // console.log(scrollPercentage.toFixed(2));
-  // console.log(scrollPosition);
-
-  // // Determine the screen size
-  // let screenSize;
-  // if (window.screen.width >= 769) {
-  //   screenSize = 'large';
-  // } else if (window.screen.width >= 512 && window.screen.width < 769) {
-  //   screenSize = 'medium';
-  // } else {
-  //   screenSize = 'small';
-  // }
-
-  // // Find the active waypoint based on screen size
-  // const activeWaypoint = waypoints[screenSize].find(
-  //   (waypoint) => scrollPercentage.toFixed(2) >= waypoint.start && scrollPercentage.toFixed(2) <= waypoint.end
-  // );
-
-  // // Activate the corresponding link
-  // if (activeWaypoint) {
-  // }
 });
 
 
@@ -121,105 +114,7 @@ window.addEventListener('scroll', function () {
         }
       }
     }
-  }, []); // Empty dependency array ensures that this useEffect runs only once on component mount
-//   useEffect(() => {
-//     const list = document.querySelectorAll('.list');
-//     const refs = Object.values(elements ?? {});
-
-//     const thresholds = refs.map(ref => ref.current.offsetTop / document.body.scrollHeight * 100);
-
-//     // console.log(thresholds)
-//     window.onload = function () {
-//       document.querySelector('.home').classList.add('active');
-//     };
-
-//     function activeLink() {
-//       list.forEach((item) => item.classList.remove('active'));
-//       this.classList.add('active');
-//     }
-
-//     list.forEach((item) => item.addEventListener('click', activeLink));
-
-//     window.addEventListener('scroll', function () {
-//     var scrollPosition = window.scrollY;
-//     var totalHeight = document.body.scrollHeight - window.innerHeight;
-//     var scrollPercentage = (scrollPosition / totalHeight) * 100;
-
-//     list.forEach((item, index) => {
-//       if (scrollPercentage.toFixed(2) <= thresholds[index]) {
-//         list.forEach((item) => item.classList.remove('active'));
-//         item.classList.add('active');
-//         return;
-//       }
-//     });
-//   });
-// }, []);
-
-    
-  // console.log("Refs in Navbar.js:", listRefs);
-    
-      
-  // const list = document.querySelectorAll('.list');
-
-  
-
-  // useEffect(() => {
-  //   if (Array.isArray(listRefs) && listRefs.length > 0) {
-  //     const observerOptions = {
-  //       root: null,
-  //       rootMargin: '0px',
-  //       threshold: 0.5,
-  //     };
-
-  //     const observerCallback = (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           listRefs.forEach((ref, index) => {
-  //             if (ref && ref.current && ref.current instanceof Element) {
-  //               list[index].classList.remove('active');
-  //             }
-  //           });
-
-  //           const index = listRefs.findIndex((ref) => ref && ref.current === entry.target);
-
-  //           if (listRefs[index] && listRefs[index].current) {
-  //             list[index].classList.add('active');
-  //           }
-  //         }
-  //       });
-  //     };
-
-  //     const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-  //     listRefs.forEach((ref) => {
-  //       if (ref && ref.current && ref.current instanceof Element) {
-  //         observer.observe(ref.current);
-  //       }
-  //     });
-
-  //     return () => {
-  //       observer.disconnect();
-  //     };
-  //   }
-  // }, [listRefs]);
-
-  // window.addEventListener('scroll', reveal);
-  
-  //     function reveal() {
-  //       var reveals = document.querySelectorAll('.reveal');
-  //       for (var i = 0; i < reveals.length; i++) {
-  //         var windowheight = window.innerHeight;
-  //         var revealtop = reveals[i].getBoundingClientRect().top;
-  //         var revealpoint = 150;
-  
-  //         if (revealtop < windowheight - revealpoint) {
-  //           reveals[i].classList.add('displayed');
-  //         } else {
-  //           reveals[i].classList.remove('displayed');
-  //         }
-  //       }
-  //     }
-
+  }, []);
 
   return (
     <div className='py-[32px]'>
@@ -229,35 +124,62 @@ window.addEventListener('scroll', function () {
             <li className="list home">
               <ScrollLink to="home" smooth={true} duration={0}>
                 <span className="icon"><ion-icon name="home-outline"></ion-icon></span>
-                <span className="text">主頁</span>
+                <span className="text">{t('nav_home')}</span>
               </ScrollLink>
             </li>
             <li className="list">
               <ScrollLink to="experience" smooth={true} duration={0}>
                 <span className="icon"><ion-icon name="person-outline"></ion-icon></span>
-                <span className="text">經歷</span>
+                <span className="text">{t('nav_experience')}</span>
               </ScrollLink>
             </li>
             <li className="list">
               <ScrollLink to="skill" smooth={true} duration={0}>
                 <span className="icon"><ion-icon name="thumbs-up-outline"></ion-icon></span>
-                <span className="text">關於我</span>
+                <span className="text">{t('nav_about')}</span>
               </ScrollLink>
             </li>
             <li className="list">
               <ScrollLink to="projects" smooth={true} duration={0}>
                 <span className="icon"><ion-icon name="camera-outline"></ion-icon></span>
-                <span className="text">作品</span>
+                <span className="text">{t('nav_works')}</span>
               </ScrollLink>
             </li>
             <li className="list">
               <ScrollLink to="contact" smooth={true} duration={0}>
                 <span className="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
-                <span className="text">聯繫</span>
+                <span className="text">{t('nav_contact')}</span>
               </ScrollLink>
             </li>
-            <div className="indicator"></div>
+            <div className="indicator" style={{ backgroundColor: isin ? '#ffaf21' : '#29fd53' }}></div>
           </ul>
+          <div className='left-[90%] absolute w-1/2 h-full flex items-center justify-start'>
+            <div className="flex space-x-[0.8rem]">
+              <button
+                onClick={() => changeLanguage('en')}
+                className="flex justify-center items-center w-10 h-10 rounded-full overflow-hidden border border-gray-200 shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                title="English"
+              >
+                🇺🇸
+              </button>
+
+              <button
+                onClick={() => changeLanguage('zh-CN')}
+                className="flex justify-center items-center w-10 h-10 rounded-full overflow-hidden border border-gray-200 shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                title="Simplified Chinese"
+              >
+                🇨🇳
+              </button>
+
+              <button
+                onClick={() => changeLanguage('zh-TW')}
+                className="flex justify-center items-center w-10 h-10 rounded-full overflow-hidden border border-gray-200 shadow focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                title="Traditional Chinese"
+              >
+                🇹🇼
+              </button>
+            </div>
+          </div>
         </div>
       </nav>
       

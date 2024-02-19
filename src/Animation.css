@@ -8,11 +8,8 @@
 
 .overlay {
   position: absolute;
-  left: 50%;
-  top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 16rem; /* Adjust the font size for the big word */
-  color: #3498db; /* Text color */
+  color: #3bbb56; /* Text color */
   opacity: 0; /* Initial opacity */
   transition: opacity 0.5s ease-in-out, transform 0.1s linear; /* Add transitions */
 }

@@ -1,4 +1,59 @@
-# Getting Started with Create React App
+# Welcome to My Website
+
+Welcome to my personal/professional website hosted at [https://kennyquq.github.io/MyWebsite/](https://kennyquq.github.io/MyWebsite/). This website serves as a digital portfolio showcasing my projects, research, and interests in technology, programming, and beyond.
+
+## About Me
+
+Briefly introduce yourself here. You might want to include:
+
+- Your professional background
+- Your areas of expertise and interests
+- Any personal tidbits you'd like to share
+
+## Featured Sections
+
+### Projects
+
+Discover my past and ongoing projects, including software development, research collaborations, and personal experiments. Each project includes a detailed description, objectives achieved, technologies used, and links to repositories or live demos if available.
+
+[Explore Projects](#projects-link)
+
+### Research
+
+Learn about my research interests, publications, and any academic work I've been involved in. This section highlights my contributions to the field, with abstracts and links to full papers where applicable.
+
+[View Research](#research-link)
+
+### Blog
+
+Read my blog posts where I share insights, tutorials, and reflections on technology, programming, and my journey in the tech world.
+
+[Read the Blog](#blog-link)
+
+### Contact
+
+Interested in collaborating or have a question? Find out how to get in touch with me here.
+
+[Get in Touch](#contact-link)
+
+## How to Navigate
+
+Provide a brief guide on how visitors can navigate your website effectively. Mention any navigation menus, search functionalities, or site maps.
+
+## Acknowledgements
+
+Acknowledge any contributions, resources, or people that have helped in the creation and maintenance of your website.
+
+Thank you for visiting my website. I hope you find the content informative and engaging. Feel free to reach out through the [contact section](#contact-link) for any inquiries or collaboration opportunities.
+
+---
+
+© kennyquq. All rights reserved.
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +122,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->

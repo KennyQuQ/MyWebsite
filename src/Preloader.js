@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './loader.css';
 
 const Preloader = ({ images, children, onLoad }) => {
   const [preloaded, setPreloaded] = useState(false);
   const [loading, setLoading] = useState(true);
   const [dotCount, setDotCount] = useState(1);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const preloadImages = async () => {
@@ -43,7 +45,7 @@ const Preloader = ({ images, children, onLoad }) => {
   }, [images, onLoad]);
 
   const getLoadingText = () => {
-    return 'Loading' + '.'.repeat(dotCount);
+    return t('loading') + '.'.repeat(dotCount);
   };
 
   return loading ? (

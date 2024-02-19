@@ -18,6 +18,21 @@ const EmojiRain = () => {
     ]; // Add more emojis as needed
 
     const emojiInterval = setInterval(() => {
+      const isPhone = window.innerWidth <= 512; // Adjust the breakpoint as needed for tablet
+      const isSmallTablet = window.innerWidth > 512 && window.innerWidth <= 768; // Adjust the breakpoint as needed for tablet
+      const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024; // Adjust the breakpoint as needed for tablet
+      let fontSize = Math.random() * 50 + 50;
+
+      if (isPhone) {
+        fontSize = Math.random() * 35 + 35;
+      } else if (isSmallTablet) {
+        fontSize = Math.random() * 45 + 45;
+      } else if (isTablet) {
+        fontSize = Math.random() * 50 + 50;
+      } else {
+        fontSize = Math.random() * 50 + 50;
+      }
+
       const newEmoji = {
         symbol: emojiOptions[Math.floor(Math.random() * emojiOptions.length)],
         left: Math.random() * window.innerWidth,
@@ -25,7 +40,7 @@ const EmojiRain = () => {
         animationStartTime: performance.now(),
         initialAnimationSpeed: Math.random() * 1.0 + 0.05,
         gravityAcceleration: 1.0,
-        fontSize: Math.random() * 50 + 50,
+        fontSize: fontSize,
       };
 
       setEmojis((prevEmojis) => [...prevEmojis, newEmoji]);

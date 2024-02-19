@@ -1,0 +1,99 @@
+.project-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.project-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.project-card {
+  margin-bottom: 5rem;
+  border: #000 15px solid;
+  perspective: 1000px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  margin-right: 20px;
+}
+
+.project-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-color: #fff;
+  text-align: center;
+}
+
+.card-back a {
+  display: block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.project-content h2 {
+  color: #ffffff; /* Green color for the text */
+  position: relative;
+  display: inline-block;
+  /* -webkit-text-stroke: 1px #000; Border width and color */
+  margin-top: 10rem;
+}
+
+.project-content h2::before {
+  content: attr(data-text); /* Use the data-text attribute for the original text */
+  position: absolute;
+  top: -8px;
+  left: 0px;
+  color: #309542; /* Black color for the border */
+  -webkit-text-stroke: 0px #000; /* Border width and color */
+  z-index: 1;
+  padding: 4px; /* Adjust padding to control the space between layers */
+}
+
+.project-content h2::after {
+  content: attr(data-text); /* Use the data-text attribute for the original text */
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  color: #49e265; /* Green color for the text */
+  -webkit-text-stroke: 0px #000; /* Border width and color */
+  z-index: 1;
+}
+
+
+/* Additional styling for the project description */
+.project-content .flex-col p {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Nunito', sans-serif;
+}
