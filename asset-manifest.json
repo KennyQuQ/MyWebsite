@@ -1,9 +1,10 @@
 {
   "files": {
     "main.css": "/MyWebsite/static/css/main.ab427196.css",
-    "main.js": "/MyWebsite/static/js/main.89497fa9.js",
+    "main.js": "/MyWebsite/static/js/main.84b5ed88.js",
     "static/js/453.f011118c.chunk.js": "/MyWebsite/static/js/453.f011118c.chunk.js",
     "static/media/project1vid.mp4": "/MyWebsite/static/media/project1vid.e39483229c70dd537a17.mp4",
+    "static/media/project3vid.mp4": "/MyWebsite/static/media/project3vid.01093f03102fea8f73f8.mp4",
     "static/media/experience1.jpg": "/MyWebsite/static/media/experience1.9f0f65e39b60d6e70cbb.jpg",
     "static/media/video4.png": "/MyWebsite/static/media/video4.689c2153de3b50b0235d.png",
     "static/media/video3.png": "/MyWebsite/static/media/video3.5932496ee9bb1a544d64.png",
@@ -20,6 +21,7 @@
     "static/media/experience14.jpg": "/MyWebsite/static/media/experience14.d6080b824c3460ff5f85.jpg",
     "static/media/experience2.jpg": "/MyWebsite/static/media/experience2.13a4b5e1c80e90acd07d.jpg",
     "static/media/experience13.jpg": "/MyWebsite/static/media/experience13.17ae7b6432865d2f1aec.jpg",
+    "static/media/project3img.jpg": "/MyWebsite/static/media/project3img.02a7402cb77d349a5317.jpg",
     "static/media/experience12.jpg": "/MyWebsite/static/media/experience12.1f1d5271ab5315d2a3f4.jpg",
     "static/media/card1.jpg": "/MyWebsite/static/media/card1.1ae2bcdf5469f2b536ec.jpg",
     "static/media/experience3.jpg": "/MyWebsite/static/media/experience3.086a8fa9dd61e35a2379.jpg",
@@ -29,11 +31,11 @@
     "index.html": "/MyWebsite/index.html",
     "static/media/getFetch.cjs": "/MyWebsite/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.ab427196.css.map": "/MyWebsite/static/css/main.ab427196.css.map",
-    "main.89497fa9.js.map": "/MyWebsite/static/js/main.89497fa9.js.map",
+    "main.84b5ed88.js.map": "/MyWebsite/static/js/main.84b5ed88.js.map",
     "453.f011118c.chunk.js.map": "/MyWebsite/static/js/453.f011118c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ab427196.css",
-    "static/js/main.89497fa9.js"
+    "static/js/main.84b5ed88.js"
   ]
 }
